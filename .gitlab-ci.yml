@@ -1,7 +1,4 @@
 # GitLab Pages webapp deployment
-
-image: ruby:3.0
-
 pages:
   stage: deploy
   script:
