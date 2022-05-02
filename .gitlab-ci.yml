@@ -1,6 +1,6 @@
 # GitLab Pages webapp deployment
 
-image: busybox
+image: ruby:2.7
 
 pages:
   stage: deploy
