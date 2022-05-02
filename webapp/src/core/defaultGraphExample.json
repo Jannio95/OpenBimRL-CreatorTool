@@ -1,0 +1,123 @@
+[
+    {
+        "id": "1",
+        "type": "inputType",
+        "data": { 
+            "name": "TextInputNode", 
+            "icon": "exclamation-circle-fill", 
+            "description": "DESC DATA",
+            "label": "Example Input Text A", 
+            "selected": false,
+            "outputs": [
+                { "index": "0", "name":"text" } 
+            ]
+        },
+        "position": { "x": 100, "y": 25 }
+    },
+    {
+        "id": "2",
+        "type": "inputType",
+        "data": { 
+            "name": "TextInputNode", 
+            "icon": "exclamation-circle-fill", 
+            "description": "DESC DATA",
+            "label": "Example Input Text B", 
+            "selected": false,
+            "outputs": [
+                { "index": "0", "name":"text" } 
+            ]
+        },
+        "position": { "x": 100, "y": 125 }
+    },
+    {
+        "id": "4",
+        "type": "inputType",
+        "data": { 
+            "name": "TextInputNode", 
+            "icon": "exclamation-circle-fill", 
+            "description": "DESC DATA",
+            "label": "Example Input Text C", 
+            "selected": false,
+            "outputs": [
+                { "index": "0", "name":"text" } 
+            ] 
+        },
+        "position": { "x": 100, "y": 225 }
+    },
+    {
+        "id": "3",
+        "type": "functionType",
+        "data": { 
+            "name": "FunctionName", 
+            "icon": "exclamation-circle-fill", 
+            "description": "DESC DATA",
+            "label": "perform func a",
+            "inputs": [
+                { "index": "0", "name":"a" }, 
+                { "index": "1", "name":"b" },
+                { "index": "2", "name":"ad" },
+                { "index": "3", "name":"das" }
+            ],
+            "outputs": [
+                { "index": "0", "name":"c" }, 
+                { "index": "1", "name":"d" }
+            ],
+            "selected": false
+        },
+        "position": { "x": 550, "y": 75 }
+    },{
+        "id": "5",
+        "type": "functionType", 
+        "data": { 
+            "name": "FunctionName", 
+            "icon": "exclamation-circle-fill", 
+            "description": "DESC DATA",
+            "label": "perform func b",
+            "inputs": [
+                { "index": "0", "name":"a" }, 
+                { "index": "1", "name":"b" }
+            ],
+            "outputs": [
+                { "index": "0", "name":"c" }
+            ],
+            "selected": false
+        },
+        "position": { "x": 900, "y": 175 }
+    },{
+        "id": "6",
+        "type": "ruleIdentifier", 
+        "data": { 
+            "name": "RuleIdentifier", 
+            "icon": "exclamation-circle-fill", 
+            "description": "NONE",
+            "label": "Identifier_Example_Key",
+            "selected": false,
+            "inputs": [
+                { "index": "0" }
+            ],
+            "outputs": [
+                { "index": "0" } 
+            ]
+        },
+        "position": { "x": 1300, "y": 175 }
+    },
+    { "id": "e2-3", "source": "2", "target": "3", "targetHandle":"0", "animated": true, "label": "collection", "style": {
+            "strokeWidth" : 4
+        }
+    },
+    { "id": "e1-3", "source": "1", "target": "3", "targetHandle":"1", "label": "object", "style": {
+            "strokeWidth" : 4
+        }
+    },
+    { "id": "e3-5", "source": "3", "sourceHandle": "0", "target": "5", "targetHandle":"0", "label": "object", "style": {
+            "strokeWidth" : 4
+        }
+    },
+    { "id": "e4-5", "source": "4", "target": "5", "targetHandle":"1", "label": "object", "style": {
+            "strokeWidth" : 4
+        }
+    },{ "id": "e5-6", "source": "5", "target": "6", "style": {
+            "strokeWidth" : 4
+        }
+    }
+]
