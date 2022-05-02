@@ -6,6 +6,7 @@ pages:
     - echo "The app will be deployed to $CI_PAGES_URL"
   artifacts:
     paths:
-    - public
+    - webapp/index.html
+    - webapp/dist/
   only:
     - main
