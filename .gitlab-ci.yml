@@ -1,5 +1,7 @@
 # GitLab Pages webapp deployment
+
 pages:
+  image: node:latest
   stage: deploy
   script:
     - mkdir .public
