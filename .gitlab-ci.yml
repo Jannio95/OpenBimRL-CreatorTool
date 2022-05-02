@@ -3,12 +3,9 @@
 pages:
   stage: deploy
   script:
-    - mkdir .public
-    - cp -r * .public
-    - mv .public public
     - echo "The app will be deployed to $CI_PAGES_URL"
   artifacts:
     paths:
-    - public/
+    - public
   only:
     - main
