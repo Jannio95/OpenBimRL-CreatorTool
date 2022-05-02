@@ -1,0 +1,13 @@
+# GitLab Pages webapp deployment
+
+image: busybox
+
+pages:
+  stage: deploy
+  script:
+    - echo "The app will be deployed to $CI_PAGES_URL"
+  artifacts:
+    paths:
+      - webapp
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
