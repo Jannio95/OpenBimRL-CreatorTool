@@ -1,5 +1,7 @@
 # GitLab Pages webapp deployment
+
 pages:
+  image: node:latest
   stage: deploy
   script:
     - echo "The app will be deployed to $CI_PAGES_URL"
