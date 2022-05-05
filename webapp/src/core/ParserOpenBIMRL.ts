@@ -19,6 +19,7 @@ export default class Parser {
         let rootString = 
             "<?xml version='1.0' encoding='utf-8'?>" +
             "<tns:BIMRule " + 
+            "schemaVersion='0.1' " +
             "xmlns:tns='http://inf.bi.rub.de/OpenBimRL' " + 
             "xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' " + 
             "xsi:schemaLocation='http://inf.bi.rub.de/OpenBimRL OpenBimRL.xsd'>" +
@@ -46,7 +47,7 @@ export default class Parser {
 
             if(el.type === "ruleIdentifier"){
                 let n = xmlDoc.createElement("tns:RuleIdentifier");
-                n.setAttribute("ruleID", el.data.label);
+                n.setAttribute("label", el.data.label);
 
                 //memorize id for filtering
                 ruleIdentifierIds[el.id] = n;
@@ -205,9 +206,9 @@ export default class Parser {
             if(ruleOrRuleSet.type === 'rule'){
                 let nodeRule = xmlDoc.createElement("tns:Rule");
                 
-                if(typeof ruleOrRuleSet.id !== 'undefined'){
-                    if(ruleOrRuleSet.id !== ""){
-                        nodeRule.setAttribute("ruleID", ruleOrRuleSet.id);
+                if(typeof ruleOrRuleSet.label !== 'undefined'){
+                    if(ruleOrRuleSet.label !== ""){
+                        nodeRule.setAttribute("label", ruleOrRuleSet.label);
                     }
                 }
 
@@ -226,9 +227,9 @@ export default class Parser {
             if(ruleOrRuleSet.type === 'ruleSet'){
                 let nodeRules = xmlDoc.createElement("tns:Rules");
                 
-                if(typeof ruleOrRuleSet.id !== 'undefined'){
-                    if(ruleOrRuleSet.id !== ""){
-                        nodeRules.setAttribute("ruleID", ruleOrRuleSet.id);
+                if(typeof ruleOrRuleSet.label !== 'undefined'){
+                    if(ruleOrRuleSet.label !== ""){
+                        nodeRules.setAttribute("label", ruleOrRuleSet.label);
                     }
                 }
 
@@ -385,13 +386,13 @@ export default class Parser {
                 let rIAttributes = rI._attributes ? rI._attributes : rI; //check if information are packaged as _attributes
 
                 let identifierNode = {
-                    id: rIAttributes.ruleID,
+                    id: rIAttributes.label,
                     type: "ruleIdentifier", // Custom Node Type
                     data: { 
                         name: "RuleIdentifier",
                         icon: nIcon, 
                         description: nDescription,
-                        label: rIAttributes.ruleID,
+                        label: rIAttributes.label,
                         inputs: [{
                             'index': "0",
                             'name': undefined,
@@ -408,13 +409,13 @@ export default class Parser {
                 };
 
                 graphElements.push(identifierNode);
-                nodeMap[rIAttributes.ruleID] = identifierNode;
+                nodeMap[rIAttributes.label] = identifierNode;
 
                 graphElements.push({
                     id: createUniqueID(),
                     source: rIAttributes.source,
                     sourceHandle: rIAttributes.sourceHandle,
-                    target: rIAttributes.ruleID,
+                    target: rIAttributes.label,
                     targetHandle: "0",
                     style: {
                         'strokeWidth' : 4
@@ -457,7 +458,7 @@ export default class Parser {
                     let subCheckAttributes = subCheck._attributes ? subCheck._attributes : subCheck; //check if information are packaged as _attributes
 
                     let subCheckItem = {
-                        id: uuidv4(),
+                        label: uuidv4(),
                         name: subCheckAttributes.name,
                         applicability: [],
                         rulesOrRuleSets: [],
@@ -496,7 +497,7 @@ export default class Parser {
                     let resultSetAttributes = resultSet._attributes ? resultSet._attributes : resultSet; //check if information are packaged as _attributes
                     
                     resultSetsArr.push({
-                        id: uuidv4(),
+                        label: uuidv4(),
                         type: "resultSet",
                         name: resultSetAttributes.name,
                         elements: resultSetAttributes.elements,
@@ -535,7 +536,7 @@ export default class Parser {
                 let ruleSetAttributes = ruleSet._attributes ? ruleSet._attributes : ruleSet; //check if information are packaged as _attributes
 
                 let ruleSetItem = {
-                    id: ruleSetAttributes.ruleID ? ruleSetAttributes.ruleID : uuidv4(),
+                    label: ruleSetAttributes.label ? ruleSetAttributes.label : uuidv4(),
                     type: "ruleSet",
                     operator: ruleSetAttributes.operator,
                     rulesOrRuleSets: []
@@ -560,7 +561,7 @@ export default class Parser {
                 let ruleAttributes = rule._attributes ? rule._attributes : rule; //check if information are packaged as _attributes
 
                 let ruleItem = {
-                    id: ruleAttributes.ruleID ? ruleAttributes.ruleID : uuidv4(),
+                    label: ruleAttributes.label ? ruleAttributes.label : uuidv4(),
                     type: "rule",
                     quantifier: ruleAttributes.quantifier,
                     operator: ruleAttributes.operator,

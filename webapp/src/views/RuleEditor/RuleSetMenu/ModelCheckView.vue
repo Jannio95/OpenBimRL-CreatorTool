@@ -95,7 +95,7 @@ export default {
         },
         createSubCheck(){
             let subCheck = {
-                id: uuidv4(),
+                label: uuidv4(),
                 name: this.subCheckName,
                 applicability: [],
                 rulesOrRuleSets: []
@@ -105,18 +105,18 @@ export default {
         drag(event) {
             if(event.target.id === "rule"){
                 event.dataTransfer.setData("rulesOrRuleSetsData", JSON.stringify({
-                    id: uuidv4(),
+                    label: uuidv4(),
                     type: "rule",
                     quantifier: "all",
                     operator: "equals",
-                    operand1: "ruleIdentifier ValueA",
+                    operand1: "label containing values",
                     operand2: "value"
                 }));
             }
 
             if(event.target.id === "ruleSet"){
                 event.dataTransfer.setData("rulesOrRuleSetsData", JSON.stringify({
-                    id: uuidv4(),
+                    label: uuidv4(),
                     type: "ruleSet",
                     operator: "and",
                     rulesOrRuleSets: []
@@ -125,11 +125,11 @@ export default {
 
             if(event.target.id === "resultSet"){
                 event.dataTransfer.setData("resultSetData", JSON.stringify({
-                    id: uuidv4(),
+                    label: uuidv4(),
                     type: "resultSet",
-                    name: "ResultSet Name A",
-                    elements: "ruleIdentifier here",
-                    filter: "ruleIdentifier of iterator here"
+                    name: "Name or the ResultSet here",
+                    elements: "label containing IFC elements",
+                    filter: "insert label for iteration here"
                 }));
             }
         },
@@ -164,16 +164,16 @@ export default {
 .modelCheckViewWrapper {
     z-index: 4;
 
-    right: 12px;
+    right: 0px;
 
     margin-top: 55px;
     margin-right: 10px;
     margin-left: 50px;
     margin-bottom: 55px;
     
-    height: -moz-calc(100% - 95px);
-    height: -webkit-calc(100% - 95px);
-    height: calc(100% - 95px);
+    height: -moz-calc(100% - 65px);
+    height: -webkit-calc(100% - 65px);
+    height: calc(100% - 65px);
 
     display: flex;
     flex-direction: row;

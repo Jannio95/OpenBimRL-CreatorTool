@@ -36,7 +36,7 @@
                 <b-input-group size="sm" prepend="Elements">
                     <b-form-input v-model="parent[index].elements" required></b-form-input>
                 </b-input-group>
-                <b-input-group size="sm" prepend="RuleID">
+                <b-input-group size="sm" prepend="Filter">
                     <b-form-input v-model="parent[index].filter" required></b-form-input>
                 </b-input-group>
             </div>

@@ -67,10 +67,7 @@ export default {
     "viewer viewer";
     overflow: hidden;
 
-    border-radius: 10px;
-    margin: 15px;
-    height: calc(100vh - 30px);
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    height: 100vh;
     border: 1px solid lightgrey;
 }
 

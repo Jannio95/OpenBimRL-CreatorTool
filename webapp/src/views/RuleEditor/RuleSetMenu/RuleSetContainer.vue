@@ -2,9 +2,9 @@
     <div class="ruleSetContainer" :style="{'max-height' : isMinimized ? '95px' : 'none' }" @drop="drop" @dragover="allowDrop">
         
         <div class="menuLineLayout">
-            <b-input-group size="sm" prepend="RuleID">
+            <b-input-group size="sm" prepend="Label">
                 <b-form-input 
-                    v-model="parent[index].id"
+                    v-model="parent[index].label"
                     required
                 ></b-form-input>
             </b-input-group>

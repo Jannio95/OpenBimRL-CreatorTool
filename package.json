@@ -2,7 +2,7 @@
   "name": "OpenBimRL-Creator",
   "version": "1.0.0",
   "description": "",
-  "main": "express-server-run.js",
+  "main": "electron-run.js",
   "dependencies": {
     "bootstrap": "^4.6.1",
     "bootstrap-vue": "^2.21.2",
@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.2",
+    "electron": "^18.2.0",
     "laravel-mix": "^6.0.43",
     "postcss": "^8.3.1",
     "resolve-url-loader": "^3.1.0",
@@ -36,7 +37,8 @@
     "watch": "mix watch",
     "watch-poll": "mix watch -- --watch-options-poll=1000",
     "hot": "mix watch --hot",
-    "production": "mix --production"
+    "production": "mix --production",
+    "start": "electron ."
   },
   "keywords": [],
   "author": "",
