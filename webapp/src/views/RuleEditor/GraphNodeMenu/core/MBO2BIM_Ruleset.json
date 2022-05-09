@@ -257,9 +257,7 @@
                         { "index": "1", "name":"IfcElement_List" }
                     ],
                     "outputs": [
-                        { "index": "0", "name":"Pair_Element_A" },
-                        { "index": "1", "name":"Pair_Element_B" },
-                        { "index": "2", "name":"Results" }
+                        { "index": "0", "name":"Results" }
                     ],
                     "selected": false
                 }
@@ -395,6 +393,23 @@
                         { "index": "0", "name":"Geometry_List_A" },
                         { "index": "1", "name":"Geometry_List_B" },
                         { "index": "2", "name":"Distance_Treshold" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"Boolean_Masks_List" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "a3b2d0b7-5010-4895-bc8d-791b1148f4db", 
+                "type": "functionType", 
+                "data":{
+                    "name": "geometry.checkIntersectionByBounds",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "Checks if the bounds of geometic objects are intersecting.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"Geometry_List_A" },
+                        { "index": "1", "name":"Geometry_List_B" }
                     ],
                     "outputs": [
                         { "index": "0", "name":"Boolean_Masks_List" }

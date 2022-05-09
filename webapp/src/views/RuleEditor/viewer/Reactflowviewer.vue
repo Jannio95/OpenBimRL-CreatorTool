@@ -42,6 +42,7 @@ import Reactflowcontrols from './Reactflowcontrols.vue';
 import Reactflowbackground from './Reactflowbackground.vue';
 import Parser, { createUniqueID } from '/webapp/src/core/ParserOpenBIMRL.ts';
 import { 
+    DEFAULT_NODE_WIDTH,
     //createInputType, 
     //createFunctionType, 
     //createRuleIdentifier, 
@@ -96,8 +97,14 @@ export default {
 
                 //Retrieve pane transformation information
                 let zoomObj = event.target.offsetParent.__zoom;
+                
+                /* Old offsets
                 let offsetX = 125 + 25 * 1/zoomObj.k;
                 let offsetY = 125 * 1/zoomObj.k + 25;
+                */
+
+                let offsetX = DEFAULT_NODE_WIDTH/2;
+                let offsetY = 50 * 1/zoomObj.k + 25;
 
                 //Caluclate drop position
                 const position = {

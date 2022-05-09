@@ -132,7 +132,7 @@ export function createRuleIdentifier(dataNode) {
 //===================================================
 //================ Fancy Types ======================
 
-const defaultNodeWidth = 300;
+export const DEFAULT_NODE_WIDTH = 350;
 const nodeHeaderSize = 50;
 const stepsize = 25;
 const targetsRadius = 15;
@@ -157,9 +157,9 @@ function createTargets(targetJSON, headOffsetProzentage, createLabel = false){
                     'label', {
                         'style': {
                             position: 'fixed',
-                            right: String(-1 * defaultNodeWidth/2 + targetsRadius) + 'px',
+                            right: String(-1 * DEFAULT_NODE_WIDTH/2 + targetsRadius) + 'px',
                             top: String(-1 * targetsRadius/2) + 'px',
-                            width: String(defaultNodeWidth/2 - targetsRadius * 1.5) + 'px',
+                            width: String(DEFAULT_NODE_WIDTH/2 - targetsRadius * 1.5) + 'px',
                             textAlign: Position.Left,
                             overflow: 'hidden'
                             //border: '1px solid black'
@@ -208,9 +208,9 @@ function createSources(sourceJSON, headOffsetProzentage, createLabel = false){
                     'label', {
                         'style': {
                             position: 'fixed',
-                            left: String(-1 * defaultNodeWidth/2 + targetsRadius) + 'px',
+                            left: String(-1 * DEFAULT_NODE_WIDTH/2 + targetsRadius) + 'px',
                             top: String(-1 * targetsRadius/2) + 'px',
-                            width: String(defaultNodeWidth/2 - targetsRadius * 1.5) + 'px',
+                            width: String(DEFAULT_NODE_WIDTH/2 - targetsRadius * 1.5) + 'px',
                             textAlign: Position.Right,
                             overflow: 'hidden'
                             //border: '1px solid black'
@@ -290,7 +290,7 @@ function createSources(sourceJSON, headOffsetProzentage, createLabel = false){
     let reactVueNode = React.createElement(
         'div', {
             'style': {
-                width: String(defaultNodeWidth) + 'px', 
+                width: String(DEFAULT_NODE_WIDTH) + 'px', 
                 height: String(maxSize) + 'px',
                 background: 'white',
                 borderRadius: 5,
@@ -355,7 +355,7 @@ function createSources(sourceJSON, headOffsetProzentage, createLabel = false){
     let reactVueNode = React.createElement(
         'div', {
             'style': {
-                width: String(defaultNodeWidth + 50) + 'px', 
+                width: String(DEFAULT_NODE_WIDTH) + 'px', 
                 height: String(maxSize) +'px',
                 background: 'white',
                 borderRadius: 5,
@@ -419,7 +419,7 @@ function createSources(sourceJSON, headOffsetProzentage, createLabel = false){
     let reactVueNode = React.createElement(
         'div', {
             'style': {
-                width: String(defaultNodeWidth + 50) + 'px', 
+                width: String(DEFAULT_NODE_WIDTH) + 'px', 
                 height: String(maxSize) + 'px',
                 background: 'white',
                 borderRadius: 5,
