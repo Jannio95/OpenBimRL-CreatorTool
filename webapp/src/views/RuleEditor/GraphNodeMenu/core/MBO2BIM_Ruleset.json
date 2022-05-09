@@ -211,6 +211,23 @@
                 }
             },
             { 
+                "id": "71c264f0-1012-4aa4-bc54-d8d213a9d80b", 
+                "type": "functionType", 
+                "data":{
+                    "name": "ifc.getGeometryByElement",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "Retrieves the geometry and groups it, based on the IFC element.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"IfcElement_List" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"Grouped_Geometry_List" }
+                    ],
+                    "selected": false
+                }
+            },
+            { 
                 "id": "93f31e44-5d25-4289-811a-e80288a8958b", 
                 "type": "functionType", 
                 "data":{
@@ -363,6 +380,48 @@
                     ],
                     "outputs": [
                         { "index": "0", "name":"result" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "816039f0-c763-4d69-95f2-0a23e291384c", 
+                "type": "functionType", 
+                "data":{
+                    "name": "geometry.checkNeighborhoodByDistance",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "Checks if geometic object are close to each other based on their geometric definitions.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"Geometry_List_A" },
+                        { "index": "1", "name":"Geometry_List_B" },
+                        { "index": "2", "name":"Distance_Treshold" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"Boolean_Masks_List" }
+                    ],
+                    "selected": false
+                }
+            }
+        ]
+    },{
+        "id": "d6bdcbfe-09d9-4b4c-b270-49c92275ecb7",
+        "name": "Filter Functions",
+        "color": "LightCyan",
+        "items": [
+            { 
+                "id": "b8b11164-7b3f-449d-8604-70f5fbfec68c", 
+                "type": "functionType", 
+                "data":{
+                    "name": "filter.filterByMasks",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "Filters a list of elements by a list of filter masks.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"IFC Elements" },
+                        { "index": "1", "name":"Filter Mask List" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"Filteres Elements" }
                     ],
                     "selected": false
                 }
