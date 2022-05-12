@@ -211,7 +211,7 @@ export default {
     mounted: function () {
         //Load sample data when mounted
         if(this.$store.state.modelCheck.elements.length === 0){
-            this.$store.state.modelCheck.elements = exampleData;
+            this.$store.state.modelCheck = exampleData;
             this.$store.state.subChecks = [{
                 id: "0",
                 name: "Absatz 1: Test Prüfung",

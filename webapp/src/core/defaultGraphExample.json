@@ -1,123 +1,291 @@
-[
-    {
-        "id": "1",
-        "type": "inputType",
-        "data": { 
-            "name": "TextInputNode", 
-            "icon": "exclamation-circle-fill", 
-            "description": "DESC DATA",
-            "label": "Example Input Text A", 
-            "selected": false,
-            "outputs": [
-                { "index": "0", "name":"text" } 
-            ]
-        },
-        "position": { "x": 100, "y": 25 }
-    },
-    {
-        "id": "2",
-        "type": "inputType",
-        "data": { 
-            "name": "TextInputNode", 
-            "icon": "exclamation-circle-fill", 
-            "description": "DESC DATA",
-            "label": "Example Input Text B", 
-            "selected": false,
-            "outputs": [
-                { "index": "0", "name":"text" } 
-            ]
-        },
-        "position": { "x": 100, "y": 125 }
-    },
-    {
-        "id": "4",
-        "type": "inputType",
-        "data": { 
-            "name": "TextInputNode", 
-            "icon": "exclamation-circle-fill", 
-            "description": "DESC DATA",
-            "label": "Example Input Text C", 
-            "selected": false,
-            "outputs": [
-                { "index": "0", "name":"text" } 
-            ] 
-        },
-        "position": { "x": 100, "y": 225 }
-    },
-    {
-        "id": "3",
-        "type": "functionType",
-        "data": { 
-            "name": "FunctionName", 
-            "icon": "exclamation-circle-fill", 
-            "description": "DESC DATA",
-            "label": "perform func a",
-            "inputs": [
-                { "index": "0", "name":"a" }, 
-                { "index": "1", "name":"b" },
-                { "index": "2", "name":"ad" },
-                { "index": "3", "name":"das" }
-            ],
-            "outputs": [
-                { "index": "0", "name":"c" }, 
-                { "index": "1", "name":"d" }
-            ],
-            "selected": false
-        },
-        "position": { "x": 550, "y": 75 }
-    },{
-        "id": "5",
-        "type": "functionType", 
-        "data": { 
-            "name": "FunctionName", 
-            "icon": "exclamation-circle-fill", 
-            "description": "DESC DATA",
-            "label": "perform func b",
-            "inputs": [
-                { "index": "0", "name":"a" }, 
-                { "index": "1", "name":"b" }
-            ],
-            "outputs": [
-                { "index": "0", "name":"c" }
-            ],
-            "selected": false
-        },
-        "position": { "x": 900, "y": 175 }
-    },{
-        "id": "6",
-        "type": "ruleIdentifier", 
-        "data": { 
-            "name": "RuleIdentifier", 
-            "icon": "exclamation-circle-fill", 
-            "description": "NONE",
-            "label": "Identifier_Example_Key",
-            "selected": false,
-            "inputs": [
-                { "index": "0" }
-            ],
-            "outputs": [
-                { "index": "0" } 
-            ]
-        },
-        "position": { "x": 1300, "y": 175 }
-    },
-    { "id": "e2-3", "source": "2", "target": "3", "targetHandle":"0", "animated": true, "label": "collection", "style": {
-            "strokeWidth" : 4
-        }
-    },
-    { "id": "e1-3", "source": "1", "target": "3", "targetHandle":"1", "label": "object", "style": {
-            "strokeWidth" : 4
-        }
-    },
-    { "id": "e3-5", "source": "3", "sourceHandle": "0", "target": "5", "targetHandle":"0", "label": "object", "style": {
-            "strokeWidth" : 4
-        }
-    },
-    { "id": "e4-5", "source": "4", "target": "5", "targetHandle":"1", "label": "object", "style": {
-            "strokeWidth" : 4
-        }
-    },{ "id": "e5-6", "source": "5", "target": "6", "style": {
-            "strokeWidth" : 4
-        }
-    }
-]
+{
+	"elements": [
+		{
+			"id": "85d5009c-f8dc-1ccf-66c8-ce610713793a",
+			"type": "functionType",
+			"data": {
+				"name": "ifc.getProperty",
+				"icon": "exclamation-circle-fill",
+				"description": "Retrieves the property value of a specific entity.",
+				"label": "Example Text Here",
+				"inputs": [
+					{
+						"index": "0",
+						"name": "IfcElement"
+					},
+					{
+						"index": "1",
+						"name": "PropertySetName"
+					},
+					{
+						"index": "2",
+						"name": "PropertyName"
+					}
+				],
+				"outputs": [
+					{
+						"index": "0",
+						"name": "value"
+					}
+				],
+				"selected": false
+			},
+			"position": {
+				"x": 1000,
+				"y": 150
+			}
+		},
+		{
+			"id": "6ba3cccc-4a01-bc7a-fd91-e3ca9a717c52",
+			"type": "inputType",
+			"data": {
+				"name": "input.textInput",
+				"icon": "exclamation-circle-fill",
+				"description": "An simple node holding a text value and displays it as a label.",
+				"label": "Pset_WallCommon",
+				"selected": false,
+				"outputs": [
+					{
+						"index": "0",
+						"name": "text"
+					}
+				]
+			},
+			"position": {
+				"x": 0,
+				"y": 100
+			}
+		},
+		{
+			"id": "953a5a9a-d90f-d80b-8b3a-85586e15b885",
+			"source": "6ba3cccc-4a01-bc7a-fd91-e3ca9a717c52",
+			"target": "85d5009c-f8dc-1ccf-66c8-ce610713793a",
+			"sourceHandle": "0",
+			"targetHandle": "1",
+			"style": {
+				"strokeWidth": 4
+			}
+		},
+		{
+			"id": "c37f31a8-265b-9fab-3363-67a516e49f96",
+			"type": "inputType",
+			"data": {
+				"name": "input.textInput",
+				"icon": "exclamation-circle-fill",
+				"description": "An simple node holding a text value and displays it as a label.",
+				"label": "LoadBearing",
+				"selected": false,
+				"outputs": [
+					{
+						"index": "0",
+						"name": "text"
+					}
+				]
+			},
+			"position": {
+				"x": 0,
+				"y": 250
+			}
+		},
+		{
+			"id": "8bee1359-1d92-5285-2656-99e8cdcfaa3d",
+			"source": "c37f31a8-265b-9fab-3363-67a516e49f96",
+			"target": "85d5009c-f8dc-1ccf-66c8-ce610713793a",
+			"sourceHandle": "0",
+			"targetHandle": "2",
+			"style": {
+				"strokeWidth": 4
+			}
+		},
+		{
+			"id": "bb426f64-8658-e235-e8fa-aec86ff5d78c",
+			"type": "inputType",
+			"data": {
+				"name": "input.textInput",
+				"icon": "exclamation-circle-fill",
+				"description": "An simple node holding a text value and displays it as a label.",
+				"label": "IfcWall",
+				"selected": false,
+				"outputs": [
+					{
+						"index": "0",
+						"name": "text"
+					}
+				]
+			},
+			"position": {
+				"x": 0,
+				"y": 400
+			}
+		},
+		{
+			"id": "bc2a7431-9376-db5d-a12a-fe48e83bddbd",
+			"type": "functionType",
+			"data": {
+				"icon": "exclamation-circle-fill",
+				"name": "ifc.filterByElement",
+				"description": "Filters a IFC model and retrieves all elements of a certain type.",
+				"label": "Example Text Here",
+				"inputs": [
+					{
+						"index": "0",
+						"name": "IfcType"
+					}
+				],
+				"outputs": [
+					{
+						"index": "0",
+						"name": "IfcElement_List"
+					}
+				],
+				"selected": false
+			},
+			"position": {
+				"x": 450,
+				"y": 380
+			}
+		},
+		{
+			"id": "459378e2-3ee4-92ea-4d46-54dd0b3676cc",
+			"source": "bb426f64-8658-e235-e8fa-aec86ff5d78c",
+			"target": "bc2a7431-9376-db5d-a12a-fe48e83bddbd",
+			"sourceHandle": "0",
+			"targetHandle": "0",
+			"style": {
+				"strokeWidth": 4
+			}
+		},
+		{
+			"id": "484671e2-884e-364f-574e-c869de166e12",
+			"source": "bc2a7431-9376-db5d-a12a-fe48e83bddbd",
+			"target": "85d5009c-f8dc-1ccf-66c8-ce610713793a",
+			"sourceHandle": "0",
+			"targetHandle": "0",
+			"style": {
+				"strokeWidth": 4
+			}
+		},
+		{
+			"id": "96e83e78-a2aa-42cf-de5f-5a0fb05c48d2",
+			"type": "ruleIdentifier",
+			"data": {
+				"name": "RuleIdentifier",
+				"icon": "exclamation-circle-fill",
+				"description": "The transferred value is stored as a usable identifier during further rule processing. The identifier is labeled and usable according to the text value of the node.",
+				"label": "propertyValue",
+				"selected": false,
+				"inputs": [
+					{
+						"index": "0",
+						"name": "ingoing"
+					}
+				],
+				"outputs": [
+					{
+						"index": "0",
+						"name": "outgoing"
+					}
+				]
+			},
+			"position": {
+				"x": 1500,
+				"y": 100
+			}
+		},
+		{
+			"id": "df49cbf9-b2ec-62c4-bb41-9d381e4cf673",
+			"source": "85d5009c-f8dc-1ccf-66c8-ce610713793a",
+			"target": "96e83e78-a2aa-42cf-de5f-5a0fb05c48d2",
+			"sourceHandle": "0",
+			"targetHandle": "0",
+			"style": {
+				"strokeWidth": 4
+			}
+		},
+		{
+			"id": "54c4401c-c0a7-defc-21af-76cac8bf81f6",
+			"type": "ruleIdentifier",
+			"data": {
+				"name": "RuleIdentifier",
+				"icon": "exclamation-circle-fill",
+				"description": "The transferred value is stored as a usable identifier during further rule processing. The identifier is labeled and usable according to the text value of the node.",
+				"label": "ifcEntities",
+				"selected": false,
+				"inputs": [
+					{
+						"index": "0",
+						"name": "ingoing"
+					}
+				],
+				"outputs": [
+					{
+						"index": "0",
+						"name": "outgoing"
+					}
+				]
+			},
+			"position": {
+				"x": 1500,
+				"y": 400
+			}
+		},
+		{
+			"id": "b2e8bd2d-3d6b-dde5-a91a-23be212b60b6",
+			"source": "bc2a7431-9376-db5d-a12a-fe48e83bddbd",
+			"target": "54c4401c-c0a7-defc-21af-76cac8bf81f6",
+			"sourceHandle": "0",
+			"targetHandle": "0",
+			"style": {
+				"strokeWidth": 4
+			}
+		}
+	],
+	"subChecks": [
+		{
+			"label": "59916de6-7613-4e3e-b87e-f1d5319202bf",
+			"name": "Check PropertySet for Values",
+			"applicability": [],
+			"rulesOrRuleSets": [
+				{
+					"label": "77dd6850-f1d7-4c13-81e0-2de33fbf06cc",
+					"type": "ruleSet",
+					"operator": "or",
+					"rulesOrRuleSets": [
+						{
+							"label": "check01",
+							"type": "rule",
+							"quantifier": "all",
+							"operator": "equals",
+							"operand1": "propertyValue",
+							"operand2": "true"
+						},
+						{
+							"label": "check02",
+							"type": "rule",
+							"quantifier": "all",
+							"operator": "equals",
+							"operand1": "propertyValue",
+							"operand2": "false"
+						}
+					]
+				}
+			]
+		}
+	],
+	"resultSets": [
+		{
+			"label": "94eca143-e3f2-489a-b4a0-b55aba7be8eb",
+			"type": "resultSet",
+			"name": "With true values",
+			"elements": "ifcEntities",
+			"filter": "check01"
+		},
+		{
+			"label": "9e4e44fe-06b0-48b0-a159-bfaad5a169b5",
+			"type": "resultSet",
+			"name": "With false values",
+			"elements": "ifcEntities",
+			"filter": "check02"
+		}
+	]
+}
