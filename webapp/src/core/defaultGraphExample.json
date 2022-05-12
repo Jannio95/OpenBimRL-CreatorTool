@@ -238,12 +238,86 @@
 			"style": {
 				"strokeWidth": 4
 			}
+		},
+		{
+			"id": "6d2cd2a8-079f-6108-53e8-3cc8553c7748",
+			"type": "functionType",
+			"data": {
+				"name": "ifc.getAllPropertySetInformation",
+				"icon": "exclamation-circle-fill",
+				"description": "Retrieves the property value of a specific entity.",
+				"label": "Example Text Here",
+				"inputs": [
+					{
+						"index": "0",
+						"name": "IfcElement"
+					}
+				],
+				"outputs": [
+					{
+						"index": "0",
+						"name": "Map of PropertyInfo"
+					}
+				],
+				"selected": false
+			},
+			"position": {
+				"x": 1000,
+				"y": 780
+			}
+		},
+		{
+			"id": "f9582568-ff78-ba07-3513-269bc69a8a58",
+			"source": "bc2a7431-9376-db5d-a12a-fe48e83bddbd",
+			"target": "6d2cd2a8-079f-6108-53e8-3cc8553c7748",
+			"sourceHandle": "0",
+			"targetHandle": "0",
+			"style": {
+				"strokeWidth": 4
+			}
+		},
+		{
+			"id": "3f2e47f6-e036-a49f-3528-e638b0c83a48",
+			"type": "ruleIdentifier",
+			"data": {
+				"name": "RuleIdentifier",
+				"icon": "exclamation-circle-fill",
+				"description": "The transferred value is stored as a usable identifier during further rule processing. The identifier is labeled and usable according to the text value of the node.",
+				"label": "propertyInfos",
+				"selected": false,
+				"inputs": [
+					{
+						"index": "0",
+						"name": "ingoing"
+					}
+				],
+				"outputs": [
+					{
+						"index": "0",
+						"name": "outgoing"
+					}
+				]
+			},
+			"position": {
+				"x": 1500,
+				"y": 800
+			}
+		},
+		{
+			"id": "c8f91ce8-b228-37c4-1c95-0108a4a833c6",
+			"source": "6d2cd2a8-079f-6108-53e8-3cc8553c7748",
+			"target": "3f2e47f6-e036-a49f-3528-e638b0c83a48",
+			"sourceHandle": "0",
+			"targetHandle": "0",
+			"style": {
+				"strokeWidth": 4
+			}
 		}
 	],
 	"subChecks": [
 		{
 			"label": "59916de6-7613-4e3e-b87e-f1d5319202bf",
-			"name": "Check PropertySet for Values",
+			"name": "Check PropertySet by Values",
 			"applicability": [],
 			"rulesOrRuleSets": [
 				{
@@ -270,22 +344,66 @@
 					]
 				}
 			]
+		},
+		{
+			"label": "6dd8b423-49b7-4847-93ae-3259bdd401f0",
+			"name": "Check PropertySet by PropertyInfos",
+			"applicability": [],
+			"rulesOrRuleSets": [
+				{
+					"label": "3129cd4c-e3d0-4c02-8250-01a4da1c1508",
+					"type": "ruleSet",
+					"operator": "and",
+					"rulesOrRuleSets": [
+						{
+							"label": "check03",
+							"type": "rule",
+							"quantifier": "exists",
+							"operator": "equals",
+							"operand1": "propertyInfos",
+							"operand2": "Pset_WallCommon:LoadBearing:true"
+						},
+						{
+							"label": "check04",
+							"type": "rule",
+							"quantifier": "exists",
+							"operator": "equals",
+							"operand1": "propertyInfos",
+							"operand2": "Pset_WallCommon:LoadBearing:false"
+						}
+					]
+				}
+			]
 		}
 	],
 	"resultSets": [
 		{
 			"label": "94eca143-e3f2-489a-b4a0-b55aba7be8eb",
 			"type": "resultSet",
-			"name": "With true values",
+			"name": "PropertySet by Values [true]",
 			"elements": "ifcEntities",
 			"filter": "check01"
 		},
 		{
 			"label": "9e4e44fe-06b0-48b0-a159-bfaad5a169b5",
 			"type": "resultSet",
-			"name": "With false values",
+			"name": "PropertySet by Values [false]",
 			"elements": "ifcEntities",
 			"filter": "check02"
+		},
+		{
+			"label": "9caab418-f16d-4431-b593-b35860f71c97",
+			"type": "resultSet",
+			"name": "PropertySet by PropertyInfos Selection [true]",
+			"elements": "ifcEntities",
+			"filter": "check03"
+		},
+		{
+			"label": "e5f1e703-86b7-49ad-be49-0ce5f3517a79",
+			"type": "resultSet",
+			"name": "PropertySet by PropertyInfos Selection [false]",
+			"elements": "ifcEntities",
+			"filter": "check04"
 		}
 	]
 }

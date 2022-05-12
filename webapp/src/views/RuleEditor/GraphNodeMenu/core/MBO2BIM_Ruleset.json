@@ -138,6 +138,23 @@
                 }
             },
             { 
+                "id": "583deebc-727c-414b-ad17-1e0389325c4f", 
+                "type": "functionType", 
+                "data":{
+                    "name": "ifc.getAllPropertySetInformation", 
+                    "icon": "exclamation-circle-fill", 
+                    "description": "Retrieves the property value of a specific entity.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"IfcElement" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"Map of PropertyInfo" }
+                    ],
+                    "selected": false
+                }
+            },
+            { 
                 "id": "ee022a6c-8651-442c-8072-17f5f61e916b", 
                 "type": "functionType", 
                 "data":{
