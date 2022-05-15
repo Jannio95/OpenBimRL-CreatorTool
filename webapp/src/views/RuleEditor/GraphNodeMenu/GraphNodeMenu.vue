@@ -48,9 +48,9 @@
 <script>
 import GraphItemGroup from "./GraphItemGroup.vue";
 
-import mbo2bimNodeGroup from "./core/MBO2BIM_Ruleset.json";
-import nodeGroup1 from "./core/nodeGroup1.json";
-import nodeGroup2 from "./core/nodeGroup2.json";
+import mbo2bimNodeGroup from "/webapp/resources/MBO2BIM_Ruleset.json";
+import nodeGroup1 from "/webapp/resources/nodeGroup1.json";
+import nodeGroup2 from "/webapp/resources/nodeGroup2.json";
 
 export default {
     name: "GraphNodeMenu",

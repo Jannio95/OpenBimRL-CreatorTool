@@ -51,7 +51,7 @@ import {
     createFancyInputType, 
     createFancyRuleIdentifier 
 } from "/webapp/src/core/CustomNodeSetup.ts";
-import exampleData from "/webapp/src/core/defaultGraphExample.json";
+import exampleData from "/webapp/resources/defaultGraphExample.json";
 import xmljs from 'xml-js';
 
 export default {
