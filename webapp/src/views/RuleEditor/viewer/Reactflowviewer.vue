@@ -12,6 +12,7 @@
             :onConnect="onConnect"
             :onSelectionChange="onSelectionChange"
             :onNodeDoubleClick="onNodeDoubleClick"
+            :onNodeDragStop="onNodeDragStop"
             :defaultZoom="$store.state.viewer.currentZoom" 
             :minZoom="$store.state.viewer.minZoom" 
             :maxZoom="$store.state.viewer.maxZoom">
@@ -73,6 +74,10 @@ export default {
         }
     },
     methods: {
+        onNodeDragStop(event, node){
+            let storedNode = this.findElement(node.id);
+            storedNode.position = node.position;
+        },
         /* onMove: updates the position of the pane transformation to update the background rendering. */
         onMove(position){
             this.panePosition = position;
@@ -111,7 +116,7 @@ export default {
                     x: (event.clientX - zoomObj.x) * 1/zoomObj.k - offsetX,
                     y: (event.clientY - zoomObj.y) * 1/zoomObj.k - offsetY
                 };
-                
+
                 //Register postion to the node instance and create a new unique node ID
                 nodeTemplateInstance.position = position;
                 nodeTemplateInstance.id = createUniqueID(); 
