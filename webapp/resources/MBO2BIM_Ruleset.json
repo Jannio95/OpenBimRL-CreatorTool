@@ -271,7 +271,8 @@
                     "label": "Example Text Here",
                     "inputs": [
                         { "index": "0", "name":"IfcElement_List" },
-                        { "index": "1", "name":"IfcElement_List" }
+                        { "index": "1", "name":"IfcElement_List" },
+                        { "index": "2", "name":"Scale_Factor" }
                     ],
                     "outputs": [
                         { "index": "0", "name":"Results" }
@@ -547,6 +548,71 @@
                         { "index": "0", "name":"keys" },
                         { "index": "1", "name":"values" },
                         { "index": "2", "name":"map" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "75c83cb3-af79-4316-b0dc-41a7442c82e1", 
+                "type": "functionType", 
+                "data":{
+                    "name": "list.mapInvert", 
+                    "icon": "exclamation-circle-fill", 
+                    "description": "Reverses the map, making values to keys and keys to values.", 
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name": "map" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name": "invertedMap" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "f99d5010-32df-4af0-ae18-5f3c5b36f9c7", 
+                "type": "functionType", 
+                "data":{
+                    "name": "list.mapFilterByCount", 
+                    "icon": "exclamation-circle-fill", 
+                    "description": "Generates a filter mask by number of objects contained in the Map values.", 
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name": "map" },
+                        { "index": "1", "name": "counting_limit" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name": "filter" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "035a19bb-b94b-461a-9e8a-838b6395d1f7", 
+                "type": "functionType", 
+                "data":{
+                    "name": "list.mapValueCount", 
+                    "icon": "exclamation-circle-fill", 
+                    "description": "Counts the number of objects contained in the Map values and generates a new map based on that.", 
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name": "map" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name": "mapCounted" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "8d9a814f-5db0-46dc-a6c3-e2609703bb67", 
+                "type": "functionType", 
+                "data":{
+                    "name": "list.mapKeySet", 
+                    "icon": "exclamation-circle-fill", 
+                    "description": "Retrieves the keyset of a assigned map.", 
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name": "map" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name": "keySet" }
                     ],
                     "selected": false
                 }
