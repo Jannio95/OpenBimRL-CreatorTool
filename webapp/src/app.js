@@ -39,7 +39,8 @@ const store = new Vuex.Store({
             resultSets: [] //Containes ResultSets
         },
         selectedElements: [],
-        currentfile : ""
+        currentfile : "",
+        version: 0.1
     }
 });
 //config.vueInstanceOptions = { store: store };

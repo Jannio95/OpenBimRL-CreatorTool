@@ -47,10 +47,7 @@
 
 <script>
 import GraphItemGroup from "./GraphItemGroup.vue";
-
 import mbo2bimNodeGroup from "/webapp/resources/MBO2BIM_Ruleset.json";
-import nodeGroup1 from "/webapp/resources/nodeGroup1.json";
-import nodeGroup2 from "/webapp/resources/nodeGroup2.json";
 
 export default {
     name: "GraphNodeMenu",
@@ -62,9 +59,7 @@ export default {
             search : '',
             loadedLibraries : [ "MBO2BIM" ],
             availableLibraries : {
-                "MBO2BIM" : mbo2bimNodeGroup,
-                "TestLib 1" : nodeGroup1,
-                "TestLib 2" : nodeGroup2
+                "MBO2BIM" : mbo2bimNodeGroup
             },
             currentSelection : "MBO2BIM"
         }

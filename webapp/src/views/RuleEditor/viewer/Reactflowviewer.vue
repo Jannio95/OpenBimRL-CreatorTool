@@ -18,7 +18,7 @@
             :maxZoom="$store.state.viewer.maxZoom">
 
             <!-- vue based self implementation of a react flow control panel -->
-            <reactflowcontrols />
+            <reactflowcontrols :handleRenderBGGrid="handleRenderBGGrid" :versionInformation="$store.state.version"/>
 
             <!-- vue based self implementation of a react flow background -->
             <reactflowbackground v-if="$store.state.settings.renderBackground" :panePosition="panePosition" />
@@ -211,6 +211,9 @@ export default {
                     return element;
                 }
             }
+        },
+        handleRenderBGGrid(){
+            this.$store.state.settings.renderBackground = !this.$store.state.settings.renderBackground;
         }
     },
     mounted: function () {

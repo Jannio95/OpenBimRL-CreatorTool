@@ -45,6 +45,7 @@
                 <b-button v-b-toggle.sidebar-nodemenu variant="primary">Create Nodes</b-button>
             </b-button-group>
 
+            <!--
             <b-button-group class="mx-1">
                 <b-button id="tooltip-button-renderBG1" :pressed.sync="$store.state.settings.renderBackground" variant="primary">
                     Render BG
@@ -53,15 +54,51 @@
                     Toggles the rendering of the background grid.
                 </b-tooltip>
             </b-button-group>
+            -->
 
             <b-button v-b-toggle.sidebar-right>Help?</b-button>
-            <b-sidebar id="sidebar-right" title="Sidebar" right shadow>
+            <b-sidebar id="sidebar-right" title="Information" right shadow>
                 <div class="px-3 py-2">
-                    <p>
-                    Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
-                    in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                    <h4>Über OpenBimRL Creator</h4>
+                    <p class="sidebar-block" style="text-align: justify;">
+                        Angelehnt an der graphen-basierten Programmierung beschreibt das OpenBimRL Format eine Regelsprache zur formellen und fachlichen Prüfung 
+                        von Bauwerksmodellen. Das Format definiert eine dynamisch erweiterbare Schnittstelle auf derer Basis Bausteine für einen graphen-basierten 
+                        Prüfvorgang konstruiert und verknüpft werden können. Bei der Entwicklung wurde Wert auf Offenheit und Transparenz der Prüfungdokumente gelegt. 
                     </p>
-                    <b-img src="https://picsum.photos/500/500/?image=54" fluid thumbnail></b-img>
+
+                    <h4>Entwickelt von</h4>
+                    <b-link href="https://www.inf.bi.ruhr-uni-bochum.de/">
+                        <b-img src="https://www.inf.bi.ruhr-uni-bochum.de/iib/mam/images/logos/logo_menue_de.png" fluid thumbnail></b-img>
+                    </b-link>
+                    
+                    <br>
+
+                    <table class="sidebar-block">
+                        <tr>
+                            <td><b>Institution:</b></td> 
+                            <td>Lehrstuhl für Informatik im Bauwesen <br> an der Ruhr-Universität Bochum</td>
+                        </tr>
+                        <tr>
+                            <td><b>Entwickler:</b></td> 
+                            <td>Marcel Stepien</td>
+                        </tr>
+                        <tr>
+                            <td><b>E-Mail:</b></td> 
+                            <td>marcel.stepien@ruhr-uni-bochum.de</td>
+                        </tr>
+                    </table>
+
+                    <div class="sidebar-block">
+                        <b-link href="https://www.linkedin.com/company/lehrstuhl-f%C3%BCr-informatik-im-bauwesen">
+                            <b-icon icon="linkedin" font-scale="3"></b-icon>
+                        </b-link>
+                        <b-link href="https://twitter.com/iib_rub">
+                            <b-icon icon="twitter" font-scale="3"></b-icon>
+                        </b-link>
+                        <b-link href="https://github.com/RUB-Informatik-im-Bauwesen">
+                            <b-icon icon="github" font-scale="3"></b-icon>
+                        </b-link>
+                    </div>
                 </div>
             </b-sidebar>
 
@@ -212,5 +249,12 @@ export default {
   height: 100%;
   margin-left: 5px;
   margin-right: 5px;
+}
+
+.sidebar-block {
+    font-size: 12px; 
+    width: 100%; 
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 </style>

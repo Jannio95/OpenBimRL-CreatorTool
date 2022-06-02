@@ -1,18 +1,15 @@
 <template>
     <div id="controlContainer" class="react-flow__controls">
-        <div class="react-flow__controls-button">
-            +
+        <div class="react-flow__controls-button" @click="handleRenderBGGrid">
+            <b-icon id="tooltip-button-renderBG1" icon="grid3x3"></b-icon>
+            <b-tooltip target="tooltip-button-renderBG1" triggers="hover">
+                Toggles the rendering of the background grid.
+            </b-tooltip>
         </div>
-        <div class="react-flow__controls-button">
-            -
-        </div>
-        <div class="react-flow__controls-button">
-            <b-icon icon="arrows-fullscreen"></b-icon>
-        </div>
-        <div class="react-flow__controls-button">
+        <div class="react-flow__controls-button" @click="handleMakeScreenshot">
             <b-icon icon="camera"></b-icon>
         </div>
-        <div class="react-flow__controls-button">
+        <div class="react-flow__controls-button" @click="handleInformation">
             <b-icon icon="info-circle"></b-icon>
         </div>
     </div>
@@ -21,6 +18,8 @@
 <script>
 export default {
     name: "Reactflowcontrols",
+    
+    props : [ "handleRenderBGGrid", "versionInformation" ],
 
     data() {
         return {
@@ -29,10 +28,20 @@ export default {
     },
 
     methods: {
-        /*onZoomIn(value){
-            this.$emit('onZoomIn', value);
-        }*/
-        
+        handleMakeScreenshot(){
+            this.$bvToast.toast(`Screenshot function currently not implemented.`, {
+                title: 'Notification',
+                autoHideDelay: 5000,
+                appendToast: true
+            })
+        },
+        handleInformation(){
+            this.$bvToast.toast(`OpenBimRL Creator version: ` + this.versionInformation, {
+                title: 'Information',
+                autoHideDelay: 5000,
+                appendToast: true
+            })
+        }
     },
 
     mounted: function () {
