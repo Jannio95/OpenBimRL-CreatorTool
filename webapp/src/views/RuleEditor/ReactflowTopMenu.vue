@@ -27,20 +27,8 @@
                     <b-dropdown-item-button @click="showFilenameModal('xml')">
                         XML
                     </b-dropdown-item-button>
-                    <!--
-                        <b-dropdown-divider></b-dropdown-divider>
-                        <b-dropdown-item-button>
-                            Other
-                        </b-dropdown-item-button>
-                    -->
                 </b-dropdown>
             </b-button-group>
-            <!--
-            <b-button-group class="mx-1">
-                <b-button>do</b-button>
-                <b-button>Undo</b-button>
-            </b-button-group>
-            -->
             <b-button-group class="mx-1">
                 <b-button v-b-toggle.sidebar-nodemenu variant="primary">Create Nodes</b-button>
             </b-button-group>
@@ -85,6 +73,10 @@
                         <tr>
                             <td><b>E-Mail:</b></td> 
                             <td>marcel.stepien@ruhr-uni-bochum.de</td>
+                        </tr>
+                        <tr>
+                            <td><b>Datum:</b></td> 
+                            <td>{{ $store.state.lastModified }}</td>
                         </tr>
                     </table>
 

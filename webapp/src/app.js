@@ -40,7 +40,8 @@ const store = new Vuex.Store({
         },
         selectedElements: [],
         currentfile : "",
-        version: 0.1
+        version: 0.1,
+        lastModified: "2022-06-02"
     }
 });
 //config.vueInstanceOptions = { store: store };
