@@ -468,6 +468,57 @@
                     ],
                     "selected": false
                 }
+            },{ 
+                "id": "d065f58f-7ad3-4567-b510-623a931d0ab9", 
+                "type": "functionType", 
+                "data":{
+                    "name": "geometry.createCollisionSphere",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "TODO.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"IfcElement_List" },
+                        { "index": "1", "name":"Radius" },
+                        { "index": "2", "name":"Subdivisions" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"RegionBSPTree3D_List" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "068c8522-89ea-4652-9fb1-5aec350c1424", 
+                "type": "functionType", 
+                "data":{
+                    "name": "geometry.convertToRegionBSPTree",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "TODO.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"IfcElement_List" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"RegionBSPTree3D_List" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "417ead57-1000-4665-9ab3-dcba16edcdf4", 
+                "type": "functionType", 
+                "data":{
+                    "name": "geometry.checkIntersection",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "TODO.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"RegionBSPTree3D_List" },
+                        { "index": "1", "name":"RegionBSPTree3D_List" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"FilterMap" }
+                    ],
+                    "selected": false
+                }
             }
         ]
     },{
