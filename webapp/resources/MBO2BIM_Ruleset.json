@@ -227,6 +227,24 @@
                 }
             },
             { 
+                "id": "abc9b14d-d7c9-408f-a242-c5c273c57da9", 
+                "type": "functionType", 
+                "data":{
+                    "name": "ifc.getOpeningElements",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "Retrieves the opening elements as features of an IFC element.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"IfcElement_List" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"voids_List" },
+                        { "index": "1", "name":"fills_List" }
+                    ],
+                    "selected": false
+                }
+            },
+            { 
                 "id": "4ad92134-0490-411e-bf33-4733a1bd4953", 
                 "type": "functionType", 
                 "data":{
