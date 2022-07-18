@@ -79,6 +79,22 @@
                     ],
                     "selected": false
                 }
+            },{ 
+                "id": "11a5a589-1f1b-41e3-83a9-6e669c5e8bef", 
+                "type": "functionType", 
+                "data":{
+                    "icon": "exclamation-circle-fill", 
+                    "name": "ifc.filterByGUID",
+                    "description": "Filters a IFC model and retrieves the element of a certain GUID.", 
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"GUID" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"IfcElement" }
+                    ],
+                    "selected": false
+                }
             },
             { 
                 "id": "ecdae3b0-be8c-4ef5-b73e-ccf0ff095fef", 
@@ -96,6 +112,22 @@
                     ],
                     "outputs": [
                         { "index": "0", "name":"IfcElement List" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "4246bb5a-b323-42f8-8a45-67c45686a819", 
+                "type": "functionType", 
+                "data":{
+                    "icon": "exclamation-circle-fill", 
+                    "name": "ifc.getIfcType",
+                    "description": "Retrieves the class type of an element as String value.", 
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"IfcElement" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"String" }
                     ],
                     "selected": false
                 }
@@ -291,6 +323,23 @@
                     ],
                     "outputs": [
                         { "index": "0", "name":"MultiAppearanceShape3D_List" }
+                    ],
+                    "selected": false
+                }
+            },
+            { 
+                "id": "3025e9f1-b8a4-4a5f-88e9-d8246b0ce5d7", 
+                "type": "functionType", 
+                "data":{
+                    "name": "ifc.getBoundingBox",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "Retrieves the BoundingBox of an IFC element.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"IfcElement" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"Bounds" }
                     ],
                     "selected": false
                 }
@@ -519,6 +568,26 @@
                     ],
                     "selected": false
                 }
+            },{ 
+                "id": "c05322e6-015e-497e-8060-21b636fb63c7", 
+                "type": "functionType", 
+                "data":{
+                    "name": "geometry.decomposeGeometry",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "TODO.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"GeometryArray" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"coordinates" },
+                        { "index": "1", "name":"indices" },
+                        { "index": "2", "name":"stripCounts" },
+                        { "index": "3", "name":"contourCounts" },
+                        { "index": "4", "name":"normals" }
+                    ],
+                    "selected": false
+                }
             }
         ]
     },{
@@ -621,7 +690,7 @@
                 "id": "2804b920-0478-417a-8293-3c83e2481c1c", 
                 "type": "functionType", 
                 "data":{
-                    "name": "list.mapElementsByMask", 
+                    "name": "list.createMapByPairs", 
                     "icon": "exclamation-circle-fill", 
                     "description": "Creates a map of elements, if a key and value list is provided.", 
                     "label": "Example Text Here",
@@ -633,6 +702,23 @@
                         { "index": "0", "name":"keys" },
                         { "index": "1", "name":"values" },
                         { "index": "2", "name":"map" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "37c149a0-8f59-4584-9336-c7beb849b851", 
+                "type": "functionType", 
+                "data":{
+                    "name": "list.getMapValueAtKey", 
+                    "icon": "exclamation-circle-fill", 
+                    "description": "Retrieve the value in a map by key.", 
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"map" },
+                        { "index": "1", "name":"key" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"value" }
                     ],
                     "selected": false
                 }
@@ -698,6 +784,22 @@
                     ],
                     "outputs": [
                         { "index": "0", "name": "keySet" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "d4bfa083-384a-4309-8f8b-87860e16b4ea", 
+                "type": "functionType", 
+                "data":{
+                    "name": "list.mapValues", 
+                    "icon": "exclamation-circle-fill", 
+                    "description": "Retrieves the values of a assigned map.", 
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name": "map" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name": "values" }
                     ],
                     "selected": false
                 }
