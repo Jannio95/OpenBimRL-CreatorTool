@@ -588,6 +588,74 @@
                     ],
                     "selected": false
                 }
+            },{ 
+                "id": "6e72f422-995c-4fc3-8f7e-2df87e376625", 
+                "type": "functionType", 
+                "data":{
+                    "name": "geometry.createPointGraph",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "TODO.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"RegionBSPTree" },
+                        { "index": "1", "name":"StepSize" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"nodes" },
+                        { "index": "1", "name":"edges" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "96cadfd2-38ed-491f-b829-e49e61b56769", 
+                "type": "functionType", 
+                "data":{
+                    "name": "geometry.unifyRegionBSPTree",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "TODO.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"RegionBSPTree_List" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"RegionBSPTree" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "8f71131d-18b8-4c8c-a800-449e54a919b0", 
+                "type": "functionType", 
+                "data":{
+                    "name": "geometry.checkLinecasts",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "TODO.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"RegionBSPTree" },
+                        { "index": "1", "name":"Segment3D" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"Filter" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "008991b7-c226-4e04-9a7a-8b0d545e157c", 
+                "type": "functionType", 
+                "data":{
+                    "name": "geometry.showGraph",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "TODO.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"Nodes" },
+                        { "index": "1", "name":"Edges" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"Flag" }
+                    ],
+                    "selected": false
+                }
             }
         ]
     },{
@@ -604,11 +672,27 @@
                     "description": "Filters a list of elements by a list of filter masks.",
                     "label": "Example Text Here",
                     "inputs": [
-                        { "index": "0", "name":"IFC Elements" },
-                        { "index": "1", "name":"Filter Mask List" }
+                        { "index": "0", "name":"Objects" },
+                        { "index": "1", "name":"Filters" }
                     ],
                     "outputs": [
-                        { "index": "0", "name":"Filteres Elements" }
+                        { "index": "0", "name":"Subset of Objects" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "4f685157-3fda-4c5d-9546-e037eca7bcc8", 
+                "type": "functionType", 
+                "data":{
+                    "name": "filter.filterInvert",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "Inverts the result of a filter.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"Filters" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"Inverted Filters" }
                     ],
                     "selected": false
                 }
