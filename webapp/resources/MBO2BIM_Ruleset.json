@@ -339,7 +339,8 @@
                         { "index": "0", "name":"IfcElement" }
                     ],
                     "outputs": [
-                        { "index": "0", "name":"Bounds" }
+                        { "index": "0", "name":"Bounds" },
+                        { "index": "1", "name":"CenterPoints" }
                     ],
                     "selected": false
                 }
@@ -584,7 +585,26 @@
                         { "index": "1", "name":"indices" },
                         { "index": "2", "name":"stripCounts" },
                         { "index": "3", "name":"contourCounts" },
-                        { "index": "4", "name":"normals" }
+                        { "index": "4", "name":"normals" },
+                        { "index": "5", "name":"cetroid" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "0eb5484e-dc4b-4b84-893c-3415c95e2bf1", 
+                "type": "functionType", 
+                "data":{
+                    "name": "geometry.decomposeVector3D",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "TODO.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"Vector3D" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"x" },
+                        { "index": "1", "name":"y" },
+                        { "index": "2", "name":"z" }
                     ],
                     "selected": false
                 }
@@ -603,6 +623,41 @@
                     "outputs": [
                         { "index": "0", "name":"nodes" },
                         { "index": "1", "name":"edges" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "b4076a57-22a0-415a-9c3b-069f7b0673e9", 
+                "type": "functionType", 
+                "data":{
+                    "name": "geometry.createPointGraphNodes",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "TODO.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"RegionBSPTree" },
+                        { "index": "1", "name":"StepSize" },
+                        { "index": "2", "name":"height" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"nodes" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "587bf003-53b5-45b4-b0c9-1055143b05b8", 
+                "type": "functionType", 
+                "data":{
+                    "name": "geometry.createPointGraphEdges",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "TODO.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"Nodes" },
+                        { "index": "1", "name":"StepSize" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"edges" }
                     ],
                     "selected": false
                 }
@@ -653,6 +708,39 @@
                     ],
                     "outputs": [
                         { "index": "0", "name":"Flag" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "cd3659b2-58ed-4455-97e2-8c408632606e", 
+                "type": "functionType", 
+                "data":{
+                    "name": "geometry.getCentroidOfRegionBSPTree",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "Retrieves the centroid of an RegionBSPTree3D.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"RegionBSPTree3D" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"Centroids" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "481c88d1-ffba-4836-aac3-432dc13b93bb", 
+                "type": "functionType", 
+                "data":{
+                    "name": "geometry.convertToVector3D",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "Coverts a Point3d to Vector3D. An z-offset can be specified, if necessary.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"Point3D" },
+                        { "index": "1", "name":"z_offset_position" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"Vector3D" }
                     ],
                     "selected": false
                 }
@@ -920,6 +1008,23 @@
                     ],
                     "outputs": [
                         { "index": "0", "name":"Altered_List_A" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "6fd3d37e-c1e0-42cb-beac-fc2d4b648799", 
+                "type": "functionType", 
+                "data":{
+                    "name": "list.joinCollections", 
+                    "icon": "exclamation-circle-fill", 
+                    "description": "Joins two collections to one ArrayList.", 
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"List A" },
+                        { "index": "1", "name":"List B" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"Joined_List" }
                     ],
                     "selected": false
                 }
