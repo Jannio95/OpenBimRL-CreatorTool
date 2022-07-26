@@ -586,7 +586,8 @@
                         { "index": "2", "name":"stripCounts" },
                         { "index": "3", "name":"contourCounts" },
                         { "index": "4", "name":"normals" },
-                        { "index": "5", "name":"cetroid" }
+                        { "index": "5", "name":"cetroid" },
+                        { "index": "6", "name":"profile" }
                     ],
                     "selected": false
                 }
@@ -637,7 +638,8 @@
                     "inputs": [
                         { "index": "0", "name":"RegionBSPTree" },
                         { "index": "1", "name":"StepSize" },
-                        { "index": "2", "name":"height" }
+                        { "index": "2", "name":"height" },
+                        { "index": "3", "name":"jitter" }
                     ],
                     "outputs": [
                         { "index": "0", "name":"nodes" }
@@ -662,6 +664,40 @@
                     "selected": false
                 }
             },{ 
+                "id": "6ad92d9a-be81-47eb-ae89-1e928dfa1c2c", 
+                "type": "functionType", 
+                "data":{
+                    "name": "geometry.createPointGraphEdgesByReference",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "TODO.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"Nodes" },
+                        { "index": "1", "name":"ReferenceNodes" },
+                        { "index": "2", "name":"StepSize" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"edges" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "cf3de693-c901-4fab-87a0-00cafcb77ae8", 
+                "type": "functionType", 
+                "data":{
+                    "name": "geometry.groupGraphEdges",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "TODO.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"Edges" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"node_edge_map" }
+                    ],
+                    "selected": false
+                }
+            },{ 
                 "id": "96cadfd2-38ed-491f-b829-e49e61b56769", 
                 "type": "functionType", 
                 "data":{
@@ -674,6 +710,23 @@
                     ],
                     "outputs": [
                         { "index": "0", "name":"RegionBSPTree" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "61b01e06-5efd-439f-9f75-de048403e284", 
+                "type": "functionType", 
+                "data":{
+                    "name": "geometry.calculateDistancesByOrderedGraphEdges",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "TODO.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"Edges" },
+                        { "index": "1", "name":"StartNodes" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"Nodes_Distances" }
                     ],
                     "selected": false
                 }
@@ -837,6 +890,22 @@
                     ],
                     "outputs": [
                         { "index": "0", "name":"item" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "616f380c-576e-4c56-9a7a-f15e372a5239", 
+                "type": "functionType", 
+                "data":{
+                    "name": "list.flattenCollection", 
+                    "icon": "exclamation-circle-fill", 
+                    "description": "Flattens the hierarchy of an Collection by one level.", 
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"list" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"flattened_list" }
                     ],
                     "selected": false
                 }
