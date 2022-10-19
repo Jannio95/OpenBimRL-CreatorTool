@@ -48,6 +48,23 @@
         "color": "LightCyan",
         "items": [
             { 
+                "id": "326f997c-3a9d-4ad4-a3bf-845d9639faf0", 
+                "type": "functionType", 
+                "data":{
+                    "name": "ifc.addPolylineToEntity",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "Adds a polyline representation to the model.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"IfcElement_List" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"item_List" }
+                    ],
+                    "selected": false
+                }
+            },
+            { 
                 "id": "1464781f-1668-482e-82f2-457c551a5a31", 
                 "type": "functionType", 
                 "data":{
@@ -95,8 +112,7 @@
                     ],
                     "selected": false
                 }
-            },
-            { 
+            },{ 
                 "id": "ecdae3b0-be8c-4ef5-b73e-ccf0ff095fef", 
                 "type": "functionType", 
                 "data":{
@@ -108,6 +124,25 @@
                         { "index": "0", "name":"IfcElement List" },
                         { "index": "1", "name":"PropertySetName" },
                         { "index": "2", "name":"PropertyName" },
+                        { "index": "3", "name":"Value" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"IfcElement List" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "6982a63f-47b0-4801-b96f-8c6e932b2113", 
+                "type": "functionType", 
+                "data":{
+                    "name": "ifc.filterByQuantity", 
+                    "icon": "exclamation-circle-fill", 
+                    "description": "Filters a list of IFC entities by their quantity value. Returns all entities that contain the quantity information.", 
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"IfcElement List" },
+                        { "index": "1", "name":"QuantitySetName" },
+                        { "index": "2", "name":"QuantityName" },
                         { "index": "3", "name":"Value" }
                     ],
                     "outputs": [
@@ -306,6 +341,23 @@
                     ],
                     "outputs": [
                         { "index": "0", "name":"Grouped_Geometry_List" }
+                    ],
+                    "selected": false
+                }
+            },
+            { 
+                "id": "5882d4a4-a783-49bf-aca3-cc4316f71268", 
+                "type": "functionType", 
+                "data":{
+                    "name": "ifc.getRepresentationItems",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "Retrieves the representation items based on the IFC element.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"IfcElement_List" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"item_List" }
                     ],
                     "selected": false
                 }
