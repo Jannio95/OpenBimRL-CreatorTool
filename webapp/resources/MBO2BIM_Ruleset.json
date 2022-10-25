@@ -51,15 +51,50 @@
                 "id": "326f997c-3a9d-4ad4-a3bf-845d9639faf0", 
                 "type": "functionType", 
                 "data":{
-                    "name": "ifc.addPolylineToEntity",
+                    "name": "ifc.addRepresentationItemToEntity",
                     "icon": "exclamation-circle-fill", 
-                    "description": "Adds a polyline representation to the model.",
+                    "description": "Adds a representation item to the model.",
                     "label": "Example Text Here",
                     "inputs": [
-                        { "index": "0", "name":"IfcElement_List" }
+                        { "index": "0", "name":"IfcElement_List" },
+                        { "index": "1", "name":"IfcRepresentationItem_List" },
+                        { "index": "2", "name":"Identifier" },
+                        { "index": "3", "name":"Type" }
                     ],
                     "outputs": [
-                        { "index": "0", "name":"item_List" }
+                        { "index": "0", "name":"shape_List" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "66fb9d61-5957-4797-83d3-31412930523d", 
+                "type": "functionType", 
+                "data":{
+                    "name": "ifc.getCurveLength",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "Calculates the length of a Curve (like an IfcPolyline).",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"IfcRepresentationItem_List" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"double_List" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "7e0efab4-863c-41b3-9fa9-6915152f7431", 
+                "type": "functionType", 
+                "data":{
+                    "name": "ifc.createPolyline",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "Creates a polyline based on a list of Vector3D.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"Vector3D_List" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"IfcPolyline" }
                     ],
                     "selected": false
                 }
@@ -536,6 +571,22 @@
                     "selected": false
                 }
             },{ 
+                "id": "6236dd3a-04f1-4de7-919f-e5bb107d7d5b", 
+                "type": "functionType", 
+                "data":{
+                    "name": "geometry.convertStrToVectorList",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "Converts a String to a Vector3D list. (Example: x,y,z;x,y,z;... )",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"String" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"Vector3D_List" }
+                    ],
+                    "selected": false
+                }
+            },{ 
                 "id": "816039f0-c763-4d69-95f2-0a23e291384c", 
                 "type": "functionType", 
                 "data":{
@@ -601,6 +652,22 @@
                     ],
                     "outputs": [
                         { "index": "0", "name":"RegionBSPTree3D_List" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "4a6244ab-1afa-403a-9deb-ffbb9d7b6dda", 
+                "type": "functionType", 
+                "data":{
+                    "name": "geometry.loadRepresentationItemGeometry",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "TODO.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"Shape" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"Geometry" }
                     ],
                     "selected": false
                 }
@@ -695,6 +762,22 @@
                     ],
                     "outputs": [
                         { "index": "0", "name":"nodes" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "008991b7-c226-4e04-9a7a-8b0d545e157d", 
+                "type": "functionType", 
+                "data":{
+                    "name": "geometry.showGraphColoredByValues",
+                    "icon": "exclamation-circle-fill", 
+                    "description": "TODO.",
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"NodeDistanceMap" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"Flag" }
                     ],
                     "selected": false
                 }
