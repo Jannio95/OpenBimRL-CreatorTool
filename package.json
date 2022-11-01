@@ -42,7 +42,10 @@
     "production": "mix --production",
     "start": "electron ."
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "exports": {
+	"./": "./webapp/src/"
+  },
+  "keywords": ["OpenBimRl", "Rule Checking", "BIM", "Semantics", "Geometry", "Graph", "Rule Language"],
+  "author": "Marcel Stepien",
+  "license": "MIT"
 }
