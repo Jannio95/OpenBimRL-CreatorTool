@@ -1,7 +1,6 @@
 # OpenBimRL Creator-Tool
 
-> **Schema:** XSD <br>
-> **Current Version:** 1.0 <br>
+> **Current Version:** 2022.11.1 <br>
 > **Publication Date:** 01.06.2022 <br>
 > **Updated Date:** 01.11.2022 <br>
 > **Autors:** Marcel Stepien <br>
