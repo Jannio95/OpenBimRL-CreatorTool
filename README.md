@@ -1,5 +1,14 @@
 # OpenBimRL Creator-Tool
 
+> **Schema:** XSD <br>
+> **Current Version:** 1.0 <br>
+> **Publication Date:** 01.06.2022 <br>
+> **Updated Date:** 01.11.2022 <br>
+> **Autors:** Marcel Stepien <br>
+> **E-Mail:** marcel.stepien@ruhr-uni-bochum.de
+<br>
+
+
 A web-based application to create and edit OpenBimRL files. 
 
 ## Getting started
@@ -15,10 +24,7 @@ The following dependencies have to be installed using npm:
 
 
 ```shell
-npm install express
-npm install cors
-npm install laravel-mix
-npm install vue
+npm install
 ```
 
 For more details on dependencies view the package.json file.
@@ -43,3 +49,17 @@ node express-server-run.js
 ```
 
 Exiting a running server or watch-mode: **STRG + C**
+
+
+# Run Demo without Coding
+
+**This tool also runs without the sever application!** Simply run the index.html from the webapp-folder in your web-browser to execute and use the latest updated version of this tool.
+
+![OpenBimRL-Creator-Tool demo](images/app-demo.png "Demo")
+
+
+Alternativly the application can be run as an electon app:
+
+```shell
+npm run start
+```

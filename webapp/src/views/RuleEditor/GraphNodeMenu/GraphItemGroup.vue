@@ -25,6 +25,11 @@
 </template>
 
 <script>
+/**
+ * @author Marcel Stepien
+ * @version 2022.11.1
+ */
+
 export default {
     name: "GraphItemGroup",
     

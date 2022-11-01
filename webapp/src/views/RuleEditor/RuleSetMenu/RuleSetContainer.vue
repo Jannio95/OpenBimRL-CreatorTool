@@ -43,6 +43,11 @@
 </template>
 
 <script>
+/**
+ * @author Marcel Stepien
+ * @version 2022.11.1
+ */
+
 import { v4 as uuidv4 } from 'uuid';
 import RuleContainer from './RuleContainer.vue';
 

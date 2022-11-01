@@ -1,5 +1,5 @@
 <template>
-    <div id="controlContainer" class="react-flow__controls">
+    <div class="react-flow__controls">
         <div class="react-flow__controls-button" @click="handleRenderBGGrid">
             <b-icon id="tooltip-button-renderBG1" icon="grid3x3"></b-icon>
             <b-tooltip target="tooltip-button-renderBG1" triggers="hover">
@@ -16,16 +16,15 @@
 </template>
 
 <script>
+/**
+ * @author Marcel Stepien
+ * @version 2022.11.1
+ */
+
 export default {
     name: "Reactflowcontrols",
     
     props : [ "handleRenderBGGrid", "versionInformation" ],
-
-    data() {
-        return {
-
-        }
-    },
 
     methods: {
         handleMakeScreenshot(){
@@ -47,16 +46,10 @@ export default {
     mounted: function () {
         //const { zoomIn, zoomOut, setCenter } = useZoomPanHelper();
         //console.log(useZoomPanHelper());
-    },
-    
-    components: {
-
     }
 }
 </script>
 
 <style scoped>
-#controlContainer {
-    
-}
+
 </style>

@@ -6,6 +6,11 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 
+/**
+ * @author Marcel Stepien
+ * @version 2022.11.1
+ */
+
 //Components
 import Mainframe from './views/Mainframe.vue';
 import router from './views/router.js';
@@ -44,7 +49,6 @@ const store = new Vuex.Store({
         lastModified: "2022-06-02"
     }
 });
-//config.vueInstanceOptions = { store: store };
 
 //Vue main instance, usind Vuex-Store/Data-Repository
 var vm = new Vue({
@@ -54,10 +58,6 @@ var vm = new Vue({
 
     data: {
         title: "OpenBIMRL Creator"
-    },
-    
-    methods: {
-    
     },
 
     components: {

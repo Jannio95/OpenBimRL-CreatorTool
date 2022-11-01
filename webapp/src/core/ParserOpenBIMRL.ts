@@ -2,9 +2,9 @@ import { isNode, isEdge, Position } from 'react-flow-renderer';
 import dagre, { graphlib } from 'dagre';
 import { v4 as uuidv4 } from 'uuid';
 
-
 /**
- * 
+ * @author Marcel Stepien
+ * @version 2022.11.1
  */
 export default class Parser {
    
@@ -35,9 +35,9 @@ export default class Parser {
         let nodeRuleIdentifiers = xmlDoc.createElement("tns:RuleIdentifiers");
         nodeModelCheck.appendChild(nodeRuleIdentifiers);
         
-        let ruleIdentifierIds = {};
+        let ruleIdentifierIds:any = {};
 
-        let filteredNodes = elements.filter((element) => {
+        let filteredNodes = elements.filter((element:any) => {
             return isNode(element);
         });
 
@@ -113,7 +113,7 @@ export default class Parser {
             
         }
 
-        let filteredEdges = elements.filter((element) => {
+        let filteredEdges = elements.filter((element:any) => {
             return isEdge(element);
         });
 
@@ -199,7 +199,7 @@ export default class Parser {
         return xmlString;
     }
 
-    handleRulesOrRuleSets(xmlDoc, parent, rulesOrRuleSets){
+    handleRulesOrRuleSets(xmlDoc:any, parent:any, rulesOrRuleSets:any){
         for(let index in rulesOrRuleSets){
             let ruleOrRuleSet = rulesOrRuleSets[index];
 
@@ -247,14 +247,14 @@ export default class Parser {
      * @param opts 
      * @returns 
      */
-    parse(data, opts){
+    parse(data:any, opts:any){
         let bimRule = data["tns:BIMRule"];
         let precalculations = bimRule["tns:Precalculations"];
         let ns = precalculations["tns:Node"];
         let es = precalculations["tns:Edge"];
 
-        var graphElements = [];
-        var nodeMap = {};
+        var graphElements:any[] = [];
+        var nodeMap:any = {};
 
         //If Precalculations is checked in
         if(opts.enablePrecalculations){
@@ -262,7 +262,7 @@ export default class Parser {
             for(let index in ns){
                 let n = ns[index];
 
-                let inputHandles = [];
+                let inputHandles:any[] = [];
                 if(typeof n["tns:Inputs"] !== 'undefined'){
                     let ihs = n["tns:Inputs"]["tns:Input"];
                     
@@ -279,7 +279,7 @@ export default class Parser {
                     }
                 }
 
-                let outputHandles = [];
+                let outputHandles:any[] = [];
                 if(typeof n["tns:Outputs"] !== 'undefined'){
                     let ohs = n["tns:Outputs"]["tns:Output"];
 
@@ -443,7 +443,7 @@ export default class Parser {
             }
         }
 
-        let subChecks = [];
+        let subChecks:any[] = [];
         let modelSubChecks = modelCheck["tns:ModelSubChecks"];
         if(typeof modelSubChecks !== 'undefined'){
             
@@ -457,12 +457,16 @@ export default class Parser {
                     let subCheck = subChecksArr[index];
                     let subCheckAttributes = subCheck._attributes ? subCheck._attributes : subCheck; //check if information are packaged as _attributes
 
+                    let newApplicabilityList:any[] = [];
+                    let newRulesOrRuleSetsList:any[] = [];
+                    let newResultSetsList:any[] = [];
+
                     let subCheckItem = {
                         label: uuidv4(),
                         name: subCheckAttributes.name,
-                        applicability: [],
-                        rulesOrRuleSets: [],
-                        resultSets: []
+                        applicability: newApplicabilityList,
+                        rulesOrRuleSets: newRulesOrRuleSetsList,
+                        resultSets: newResultSetsList
                     }
 
                     //Applicability
@@ -483,7 +487,7 @@ export default class Parser {
         }
         
         //ResultSets
-        let resultSetsArr = [];
+        let resultSetsArr:any[] = [];
         let resultSets = modelCheck["tns:ResultSets"];
         if(resultSets){
             let resultSetArr = resultSets["tns:ResultSet"];
@@ -521,8 +525,8 @@ export default class Parser {
         */
     }
 
-    parseRulesAndRuleSets(element){
-        let rArS = [];
+    parseRulesAndRuleSets(element:any){
+        let rArS:any[] = [];
 
         let ruleSets = element["tns:Rules"]
         if(ruleSets){
@@ -535,11 +539,12 @@ export default class Parser {
                 
                 let ruleSetAttributes = ruleSet._attributes ? ruleSet._attributes : ruleSet; //check if information are packaged as _attributes
 
+                let newList:any[] = [];
                 let ruleSetItem = {
                     label: ruleSetAttributes.label ? ruleSetAttributes.label : uuidv4(),
                     type: "ruleSet",
                     operator: ruleSetAttributes.operator,
-                    rulesOrRuleSets: []
+                    rulesOrRuleSets:newList
                 };
                 
                 ruleSetItem.rulesOrRuleSets = this.parseRulesAndRuleSets(ruleSet);
@@ -576,7 +581,7 @@ export default class Parser {
         return rArS;
     }
 
-    getLayoutedElements(elements, direction = 'TB'){
+    getLayoutedElements(elements:any, direction = 'TB'){
         const nodeWidth = 450;
         const nodeHeight = 150;
 
@@ -587,7 +592,7 @@ export default class Parser {
             const isHorizontal = direction === 'LR';
             dagreGraph.setGraph({ rankdir: direction });
             
-            elements.forEach((el) => {
+            elements.forEach((el:any) => {
                 if (isNode(el)) {
                     dagreGraph.setNode(el.id, { width: nodeWidth, height: nodeHeight });
                 } else {
@@ -597,7 +602,7 @@ export default class Parser {
             
             dagre.layout(dagreGraph);
             
-            return elements.map((el) => {
+            return elements.map((el:any) => {
                 if (isNode(el)) {
                     const nodeWithPosition = dagreGraph.node(el.id);
                     el.targetPosition = isHorizontal ? Position.Left : Position.Top;
@@ -616,7 +621,6 @@ export default class Parser {
         }
     }
 }
-
 
 export function createUniqueID(){
     function chr4(){

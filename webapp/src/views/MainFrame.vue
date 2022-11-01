@@ -1,17 +1,16 @@
 <template>
     <div>
-        
         <router-view/>
-
-        <!-- Graph editor should be accessed via routing -->
-        <!-- 
-        <projectOverview />
-        <ruleEditor />
-        -->
     </div>
 </template>
 
 <script>
+
+/**
+ * @author Marcel Stepien
+ * @version 2022.11.1
+ */
+
 import RuleEditorView from './RuleEditor/RuleEditorView.vue';
 
 export default {

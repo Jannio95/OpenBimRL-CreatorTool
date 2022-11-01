@@ -116,6 +116,12 @@
 </template>
 
 <script>
+
+/**
+ * @author Marcel Stepien
+ * @version 2022.11.1
+ */
+
 import GraphNodeMenu from './GraphNodeMenu/GraphNodeMenu.vue';
 import Parser from '/webapp/src/core/ParserOpenBIMRL.ts';
 import xmljs from 'xml-js';

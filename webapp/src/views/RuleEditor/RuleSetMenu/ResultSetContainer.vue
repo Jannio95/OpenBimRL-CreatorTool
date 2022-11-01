@@ -21,17 +21,6 @@
 
         <div class="overflow-auto">
 
-            <!--
-            <div class="menuLineLayout">
-                <b-input-group size="sm" prepend="Elements">
-                    <b-form-select v-model="parent[index].elements" :options="quatifierOptions"></b-form-select>
-                </b-input-group>
-                <b-input-group size="sm" prepend="Filter">
-                    <b-form-select v-model="parent[index].filter" :options="operatorOptions"></b-form-select>
-                </b-input-group>
-            </div>
-            -->
-
             <div class="menuLineLayout">
                 <b-input-group size="sm" prepend="Elements">
                     <b-form-input v-model="parent[index].elements" required></b-form-input>
@@ -46,6 +35,11 @@
 </template>
 
 <script>
+/**
+ * @author Marcel Stepien
+ * @version 2022.11.1
+ */
+
 import { v4 as uuidv4 } from 'uuid';
 
 export default {

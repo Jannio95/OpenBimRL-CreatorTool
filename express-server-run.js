@@ -37,6 +37,4 @@ app.post('/load', function(req, res){
 
 app.listen(port, () => {
   console.log(`Server listening on port: http://localhost:${port}`);
-  console.log(`RuleEditor accessible on port: http://localhost:${port}/#/`);
-  console.log(`Documentation accessible on port: http://localhost:${port}/#/Documentation`);
 });

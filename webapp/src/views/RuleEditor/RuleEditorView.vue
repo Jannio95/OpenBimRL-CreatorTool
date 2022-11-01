@@ -9,6 +9,12 @@
 </template>
 
 <script>
+
+/**
+ * @author Marcel Stepien
+ * @version 2022.11.1
+ */
+
 import Reactflowviewer from './viewer/Reactflowviewer.vue';
 import ReactflowTopMenu from './ReactflowTopMenu.vue';
 import ModelCheckView from './RuleSetMenu/ModelCheckView.vue';

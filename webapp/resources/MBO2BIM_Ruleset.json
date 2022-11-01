@@ -627,7 +627,7 @@
                 "data":{
                     "name": "geometry.createCollisionSphere",
                     "icon": "exclamation-circle-fill", 
-                    "description": "TODO.",
+                    "description": "Creates a spherical geometrie as RegionalBSPTree3D in provided precision for collision detection purposes.",
                     "label": "Example Text Here",
                     "inputs": [
                         { "index": "0", "name":"IfcElement_List" },
@@ -645,7 +645,7 @@
                 "data":{
                     "name": "geometry.convertToRegionBSPTree",
                     "icon": "exclamation-circle-fill", 
-                    "description": "TODO.",
+                    "description": "Converts IFC elements into RegionalBSPTree3D objects.",
                     "label": "Example Text Here",
                     "inputs": [
                         { "index": "0", "name":"IfcElement_List" }
@@ -661,7 +661,7 @@
                 "data":{
                     "name": "geometry.loadRepresentationItemGeometry",
                     "icon": "exclamation-circle-fill", 
-                    "description": "TODO.",
+                    "description": "Loads an representation item´newly created into the model context, and therfore into the viewer.",
                     "label": "Example Text Here",
                     "inputs": [
                         { "index": "0", "name":"Shape" }
@@ -677,7 +677,7 @@
                 "data":{
                     "name": "geometry.checkIntersection",
                     "icon": "exclamation-circle-fill", 
-                    "description": "TODO.",
+                    "description": "Checks if geometies of two RegionalBSPTree3D are intersecting.",
                     "label": "Example Text Here",
                     "inputs": [
                         { "index": "0", "name":"RegionBSPTree3D_List" },
@@ -694,7 +694,7 @@
                 "data":{
                     "name": "geometry.decomposeGeometry",
                     "icon": "exclamation-circle-fill", 
-                    "description": "TODO.",
+                    "description": "Decomposes a GeometryArray into its elementary parts.",
                     "label": "Example Text Here",
                     "inputs": [
                         { "index": "0", "name":"GeometryArray" }
@@ -716,7 +716,7 @@
                 "data":{
                     "name": "geometry.decomposeVector3D",
                     "icon": "exclamation-circle-fill", 
-                    "description": "TODO.",
+                    "description": "Decomposes a Vector3D into its elementary parts.",
                     "label": "Example Text Here",
                     "inputs": [
                         { "index": "0", "name":"Vector3D" }
@@ -734,7 +734,7 @@
                 "data":{
                     "name": "geometry.createPointGraph",
                     "icon": "exclamation-circle-fill", 
-                    "description": "TODO.",
+                    "description": "Creates a raster of points in an area enclosed in an RegionalBSPTree3D area, producing nodes and edges.",
                     "label": "Example Text Here",
                     "inputs": [
                         { "index": "0", "name":"RegionBSPTree" },
@@ -752,7 +752,7 @@
                 "data":{
                     "name": "geometry.createPointGraphNodes",
                     "icon": "exclamation-circle-fill", 
-                    "description": "TODO.",
+                    "description": "Computes nodes for a graph containing with certain parametric behavior, such as for creating triangles or quad patches.",
                     "label": "Example Text Here",
                     "inputs": [
                         { "index": "0", "name":"RegionBSPTree" },
@@ -771,7 +771,7 @@
                 "data":{
                     "name": "geometry.showGraphColoredByValues",
                     "icon": "exclamation-circle-fill", 
-                    "description": "TODO.",
+                    "description": "Loads the graph information and displays it in the 3D viewer.",
                     "label": "Example Text Here",
                     "inputs": [
                         { "index": "0", "name":"NodeDistanceMap" }
@@ -787,7 +787,7 @@
                 "data":{
                     "name": "geometry.createPointGraphEdges",
                     "icon": "exclamation-circle-fill", 
-                    "description": "TODO.",
+                    "description": "Connects nodes of an graph by inserting edges of a certain stepsize, provided the nodes are already known.",
                     "label": "Example Text Here",
                     "inputs": [
                         { "index": "0", "name":"Nodes" },
@@ -804,7 +804,7 @@
                 "data":{
                     "name": "geometry.createPointGraphEdgesByReference",
                     "icon": "exclamation-circle-fill", 
-                    "description": "TODO.",
+                    "description": "Connects nodes of an graph by inserting edges of a certain stepsize, provided the nodes are already known. Priorisation on reference nodes.",
                     "label": "Example Text Here",
                     "inputs": [
                         { "index": "0", "name":"Nodes" },
@@ -822,7 +822,7 @@
                 "data":{
                     "name": "geometry.groupGraphEdges",
                     "icon": "exclamation-circle-fill", 
-                    "description": "TODO.",
+                    "description": "Groups edges thogether with its nodes, providing a map of assigned node to edge list pairs.",
                     "label": "Example Text Here",
                     "inputs": [
                         { "index": "0", "name":"Edges" }
@@ -838,7 +838,7 @@
                 "data":{
                     "name": "geometry.unifyRegionBSPTree",
                     "icon": "exclamation-circle-fill", 
-                    "description": "TODO.",
+                    "description": "Joins two RegionalBSPTree3D representations into one.",
                     "label": "Example Text Here",
                     "inputs": [
                         { "index": "0", "name":"RegionBSPTree_List" }
@@ -854,7 +854,7 @@
                 "data":{
                     "name": "geometry.calculateDistancesByOrderedGraphEdges",
                     "icon": "exclamation-circle-fill", 
-                    "description": "TODO.",
+                    "description": "Performs a deepsearch based on distances from an start node to all reachable points in a graph.",
                     "label": "Example Text Here",
                     "inputs": [
                         { "index": "0", "name":"Edges" },
@@ -871,7 +871,7 @@
                 "data":{
                     "name": "geometry.checkLinecasts",
                     "icon": "exclamation-circle-fill", 
-                    "description": "TODO.",
+                    "description": "Checks if a ray passing through the scene has an intersection with a geometric object.",
                     "label": "Example Text Here",
                     "inputs": [
                         { "index": "0", "name":"RegionBSPTree" },
@@ -888,7 +888,7 @@
                 "data":{
                     "name": "geometry.showGraph",
                     "icon": "exclamation-circle-fill", 
-                    "description": "TODO.",
+                    "description": "Loads the graph information and displays it in the 3D viewer.",
                     "label": "Example Text Here",
                     "inputs": [
                         { "index": "0", "name":"Nodes" },
@@ -945,7 +945,7 @@
                 "data":{
                     "name": "filter.filterByMasks",
                     "icon": "exclamation-circle-fill", 
-                    "description": "Filters a list of elements by a list of filter masks.",
+                    "description": "Filters a list of elements by a list of of masking boolean values.",
                     "label": "Example Text Here",
                     "inputs": [
                         { "index": "0", "name":"Objects" },
@@ -962,7 +962,7 @@
                 "data":{
                     "name": "filter.filterInvert",
                     "icon": "exclamation-circle-fill", 
-                    "description": "Inverts the result of a filter.",
+                    "description": "Inverts the result of a filter. Basically, performing a boolean flip on all values of a list.",
                     "label": "Example Text Here",
                     "inputs": [
                         { "index": "0", "name":"Filters" }
@@ -1185,7 +1185,7 @@
                 "data":{
                     "name": "list.orderBy", 
                     "icon": "exclamation-circle-fill", 
-                    "description": "Sorts a list of items in ASC or DSC order.", 
+                    "description": "Sorts a list of items in ASC or DESC order.", 
                     "label": "Example Text Here",
                     "inputs": [
                         { "index": "0", "name":"list" },
@@ -1226,6 +1226,23 @@
                     "inputs": [
                         { "index": "0", "name":"List A" },
                         { "index": "1", "name":"List B" }
+                    ],
+                    "outputs": [
+                        { "index": "0", "name":"Joined_List" }
+                    ],
+                    "selected": false
+                }
+            },{ 
+                "id": "0f0f927e-3eea-4983-85d5-e91e9158a7ae", 
+                "type": "functionType", 
+                "data":{
+                    "name": "list.joinItemByItem", 
+                    "icon": "exclamation-circle-fill", 
+                    "description": "Joins two collections of same size item by item to one ArrayList.", 
+                    "label": "Example Text Here",
+                    "inputs": [
+                        { "index": "0", "name":"Collection A" },
+                        { "index": "1", "name":"Collection B" }
                     ],
                     "outputs": [
                         { "index": "0", "name":"Joined_List" }

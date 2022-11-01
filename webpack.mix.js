@@ -11,7 +11,7 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('webapp/src/app.js', 'webapp/dist/').vue();
+mix.ts('webapp/src/app.js', 'webapp/dist/').vue();
 mix.sass('webapp/src/app.scss', 'webapp/dist/');
 
 // Full API

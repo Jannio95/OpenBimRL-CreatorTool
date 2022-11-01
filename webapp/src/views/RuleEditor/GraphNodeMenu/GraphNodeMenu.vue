@@ -46,6 +46,11 @@
 </template>
 
 <script>
+/**
+ * @author Marcel Stepien
+ * @version 2022.11.1
+ */
+
 import GraphItemGroup from "./GraphItemGroup.vue";
 import mbo2bimNodeGroup from "/webapp/resources/MBO2BIM_Ruleset.json";
 
@@ -84,16 +89,6 @@ export default {
             };
             reader.readAsText(file);
         },
-    },
-
-    created() {
-        /*
-        this.libraries["MBO2BIM"] = mbo2bimNodeGroup;
-        this.libraries["TestLib 1"] = nodeGroup1;
-        this.libraries["TestLib 2"] = nodeGroup2;
-
-        this.libraryKeys = Object.keys(libraries);
-        */
     },
 
     components: {

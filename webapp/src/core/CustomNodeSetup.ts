@@ -1,13 +1,18 @@
 import React from 'react';
 import { Handle, Position } from 'react-flow-renderer';
 
+/**
+ * @author Marcel Stepien
+ * @version 2022.11.1
+ */
+
 //===================================================
 //================ Simple Types =====================
 
 /**
  * 
  */
-export function createInputType(dataNode) {
+export function createInputType(dataNode:any) {
     //console.log(dataNode);
 
     //Creates nodes for in- and output
@@ -47,7 +52,7 @@ export function createInputType(dataNode) {
 /**
  * 
  */
-export function createFunctionType(dataNode) {
+export function createFunctionType(dataNode:any) {
     let sourceCount = dataNode.data.outputs.length;
     let targetCount = dataNode.data.inputs.length;
 
@@ -96,7 +101,7 @@ export function createFunctionType(dataNode) {
 /**
  * 
  */
-export function createRuleIdentifier(dataNode) {
+export function createRuleIdentifier(dataNode:any) {
     //console.log(dataNode);
     
     //Creates nodes for in- and output
@@ -137,8 +142,8 @@ const nodeHeaderSize = 50;
 const stepsize = 25;
 const targetsRadius = 15;
 
-function createTargets(targetJSON, headOffsetProzentage, createLabel = false){
-    let targets = [];
+function createTargets(targetJSON:any, headOffsetProzentage:number, createLabel = false){
+    let targets:any[] = [];
     
     if(targetJSON){
         let targetCount = targetJSON.length;
@@ -151,7 +156,7 @@ function createTargets(targetJSON, headOffsetProzentage, createLabel = false){
                 ((100 - headOffsetProzentage)  / targetCount) * new Number(inputIndex).valueOf() + 
                 ((100 - headOffsetProzentage) / targetCount)/2;
             
-            let label = null;
+            let label;
             if(createLabel){
                 label = React.createElement(
                     'label', {
@@ -188,8 +193,8 @@ function createTargets(targetJSON, headOffsetProzentage, createLabel = false){
     return targets;
 }
 
-function createSources(sourceJSON, headOffsetProzentage, createLabel = false){
-    let sources = [];
+function createSources(sourceJSON:any, headOffsetProzentage:number, createLabel = false){
+    let sources:any[] = [];
 
     if(sourceJSON){
         let sourceCount = sourceJSON.length;
@@ -202,7 +207,7 @@ function createSources(sourceJSON, headOffsetProzentage, createLabel = false){
                 ((100 - headOffsetProzentage) / sourceCount) * new Number(outputIndex).valueOf() + 
                 ((100 - headOffsetProzentage) / sourceCount)/2;
             
-            let label = null;
+            let label;
             if(createLabel){
                 label = React.createElement(
                     'label', {
@@ -243,7 +248,7 @@ function createSources(sourceJSON, headOffsetProzentage, createLabel = false){
 /**
  * 
  */
- export function creatFancyFunctionType(dataNode) {
+ export function creatFancyFunctionType(dataNode:any) {
     let sourceCount = dataNode.data.outputs.length;
     let targetCount = dataNode.data.inputs.length;
 
@@ -315,7 +320,7 @@ function createSources(sourceJSON, headOffsetProzentage, createLabel = false){
 /**
  * 
  */
- export function createFancyInputType(dataNode) {
+ export function createFancyInputType(dataNode:any) {
      
     let headerSize = 30;
     let maxSize = 50 + headerSize;
@@ -379,7 +384,7 @@ function createSources(sourceJSON, headOffsetProzentage, createLabel = false){
 /**
  * 
  */
- export function createFancyRuleIdentifier(dataNode) {
+ export function createFancyRuleIdentifier(dataNode:any) {
     
     let headerSize = 30;
     let maxSize = 50 + headerSize;
