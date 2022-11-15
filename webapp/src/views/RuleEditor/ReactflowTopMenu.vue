@@ -32,6 +32,9 @@
             <b-button-group class="mx-1">
                 <b-button v-b-toggle.sidebar-nodemenu variant="primary">Create Nodes</b-button>
             </b-button-group>
+            <b-button-group class="mx-1">
+                <b-button @click="createGroup($store.state.selectedElements)">Create Group</b-button>
+            </b-button-group>
 
             <!--
             <b-button-group class="mx-1">
@@ -125,6 +128,7 @@
 import GraphNodeMenu from './GraphNodeMenu/GraphNodeMenu.vue';
 import Parser from '/webapp/src/core/ParserOpenBIMRL.ts';
 import xmljs from 'xml-js';
+import { v4 as uuidv4 } from 'uuid';
 
 export default {
     name: "ReactflowTopMenu",
@@ -220,6 +224,65 @@ export default {
         hideModal() {
             this.$refs['createNew-modal'].hide();
         },
+
+        createGroup(nodeList){
+
+            let xMax, xMin, yMax, yMin;
+            let groupId = uuidv4();
+
+            let updatedNodes = [];
+            for(let node of nodeList){
+               let x = node.position.x;
+               let y = node.position.y; 
+
+               if(xMax === undefined || xMax < x){
+                xMax = x;
+               }
+               if(yMax === undefined || yMax < y){
+                yMax = y;
+               }
+               if(xMin === undefined || xMin > x){
+                xMin = x;
+               }
+                if(yMin === undefined || yMin > y){
+                yMin = y;
+               }
+
+               node.parentNode = groupId;
+               node.extent = 'parent';
+               updatedNodes.push(node);
+            }
+
+            let groupData = {
+                id: groupId,
+                data: {
+                    label: "Eine Neue Gruppe",
+                    name: "group",
+                    selected: true,
+                    width: (xMax-xMin),
+                    height: (yMax-yMin)
+                },
+                position: {
+                    x: xMin - 25,
+                    y: yMin - 30 - 25
+                },
+                type: "groupNode"
+            }
+
+            console.log(this.$store.state.modelCheck.elements);
+            //this.$store.state.modelCheck.elements.push(groupData);
+            let filterFunction = function(n, list){
+                for(let sN of list) {
+                    if(sN.id === n.id){
+                        return false;
+                    }
+                }
+                return true;
+            }
+            this.$store.state.modelCheck.elements = this.$store.state.modelCheck.elements.filter(
+                n => { return filterFunction(n, nodeList) }
+            ).concat([groupData]).concat(updatedNodes);
+        }
     },
 
     mounted() {

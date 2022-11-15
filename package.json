@@ -43,9 +43,17 @@
     "start": "electron ."
   },
   "exports": {
-	"./": "./webapp/src/"
+    "./": "./webapp/src/"
   },
-  "keywords": ["OpenBimRl", "Rule Checking", "BIM", "Semantics", "Geometry", "Graph", "Rule Language"],
+  "keywords": [
+    "OpenBimRl",
+    "Rule Checking",
+    "BIM",
+    "Semantics",
+    "Geometry",
+    "Graph",
+    "Rule Language"
+  ],
   "author": "Marcel Stepien",
   "license": "MIT"
 }

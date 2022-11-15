@@ -444,3 +444,38 @@ function createSources(sourceJSON:any, headOffsetProzentage:number, createLabel 
     );
     return reactVueNode;
 }
+
+
+export function createGroupNode(dataNode:any){
+    let headerSize = 30;
+    let maxSize = 50 + headerSize;
+    let margin = 50;
+
+    //Create the head container, containing titel and function
+    let headContainer = React.createElement(
+        'div', {
+            'style': {
+                background: 'red',
+                height: String(headerSize) + 'px'
+            }
+        }, 
+        "Group: " + dataNode.data.label
+    );
+
+    let reactVueNode = React.createElement(
+        'div', {
+            'style': {
+                width: String(dataNode.data.width + DEFAULT_NODE_WIDTH + margin) + 'px', 
+                height: String(dataNode.data.height + maxSize + margin + headerSize) + 'px',
+                background: 'white',
+                borderRadius: 5,
+                textAlign: 'center',
+                border: '2px solid black',
+                overflow: 'hidden',
+                transition: "all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms"
+            }
+        },
+        headContainer
+    );
+    return reactVueNode;
+}

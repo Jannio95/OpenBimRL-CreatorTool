@@ -49,7 +49,8 @@ import {
     //createRuleIdentifier, 
     creatFancyFunctionType, 
     createFancyInputType, 
-    createFancyRuleIdentifier 
+    createFancyRuleIdentifier,
+    createGroupNode
 } from "/webapp/src/core/CustomNodeSetup.ts";
 import exampleData from "/webapp/resources/defaultGraphExample.json";
 import xmljs from 'xml-js';
@@ -66,7 +67,8 @@ export default {
             nodeTypes: { //Sets the NodeStyles dispayed
                 inputType : createFancyInputType, 
                 functionType : creatFancyFunctionType, 
-                ruleIdentifier : createFancyRuleIdentifier
+                ruleIdentifier : createFancyRuleIdentifier,
+                groupNode: createGroupNode
                 //inputType : createInputType,
                 //functionType : createFunctionType,
                 //ruleIdentifier : createRuleIdentifier
